@@ -1,9 +1,11 @@
-import Main from "./pages/main_page.js";
+import Main from "./pages/home/main_page.js";
+import Game from "./pages/game/game_page.js";
 
 const $app = document.querySelector(".App");
 
 const routes = {
    "/": Main, 
+   "/game": Game,
 };
 
 $app.innerHTML = routes["/"].template();
