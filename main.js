@@ -8,6 +8,7 @@ const routes = {
    "/game": Game,
 };
 
+
 $app.innerHTML = routes["/"].template();
 
 export const changeUrl = (requestedUrl) => {
@@ -18,3 +19,14 @@ export const changeUrl = (requestedUrl) => {
 window.addEventListener("popstate", () => {
     changeUrl(window.location.pathname);
 });
+
+/*메뉴 토글 동작 */
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+  
+    toggleButton.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  });
+  
