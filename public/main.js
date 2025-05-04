@@ -8,9 +8,17 @@ const routes = {
    "/game": Game,
 };
 
-export const changeUrl = (requestedUrl) => {
+export const changeUrl = async (requestedUrl) => {
     history.pushState(null, null, requestedUrl);
     $app.innerHTML = routes[requestedUrl].template();
+
+    // game 페이지 구현
+    if (requestedUrl === "/game") {
+        const {default: loadAllGameData} = await import("./pages/game/game_image_loader.js");
+        requestAnimationFrame(() => {
+            loadAllGameData();
+        });
+    }
 };
 
 window.addEventListener("popstate", () => {
@@ -30,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
   
-    toggleButton.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-    });
+    if (toggleButton && navMenu) {
+        toggleButton.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+    }
   });
   

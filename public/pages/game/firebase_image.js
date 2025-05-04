@@ -1,6 +1,8 @@
 // Firebase SDK import
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+
 
 // Firebase 설정
 const firebaseConfig = {
@@ -34,6 +36,3 @@ async function loadAllGameData() {
   console.log(gameData); // 👉 최종 결과 확인
   return gameData;
 }
-
-// 실행
-loadAllGameData();
