@@ -1,8 +1,14 @@
-import {loadAllGameData} from "./firebase_image.js"
+// game_image_loader.js
+import { loadAllGameData } from "./firebase_image.js";
 
-window.addEventListener('DOMContentLoaded', async () => {
+export async function displayGames() {
   const gameData = await loadAllGameData();
   const container = document.getElementById("gameContainer");
+
+  if (!container) {
+    console.error("gameContainer not found!");
+    return;
+  }
 
   for (const [gameName, [imageUrl, minimum, recommended]] of Object.entries(gameData)) {
     const gameDiv = document.createElement("div");
@@ -14,6 +20,5 @@ window.addEventListener('DOMContentLoaded', async () => {
     `;
     container.appendChild(gameDiv);
   }
-});
-
+}
   

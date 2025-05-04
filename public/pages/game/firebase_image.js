@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function loadAllGameData() {
+export async function loadAllGameData() {
   const querySnapshot = await getDocs(collection(db, "games"));
   const gameData = {};
 

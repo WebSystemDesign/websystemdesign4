@@ -6,11 +6,18 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "headers": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "**/*.@(js|css)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
       }
+    ],
+    "rewrites": [
+      { "source": "/game", "destination": "/index.html" },
+      { "source": "/", "destination": "/index.html" }
     ]
   }
 }
+
