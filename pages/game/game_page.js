@@ -1,7 +1,7 @@
 class Game {
     template() {
         return `
-        <div id="gameContainer"></div>
+        <div id="gameContainer">adsfasfd</div>
         `;
     }
 }
