@@ -8,13 +8,18 @@ const routes = {
    "/game": Game,
 };
 
-$app.innerHTML = routes["/"].template();
-
 export const changeUrl = (requestedUrl) => {
     history.pushState(null, null, requestedUrl);
     $app.innerHTML = routes[requestedUrl].template();
 };
 
 window.addEventListener("popstate", () => {
-    changeUrl(window.location.pathname);
+    $app.innerHTML = (routes[window.location.pathname] || routes["/"]).template();
 });
+
+function initRouter() {
+    const route = routes[window.location.pathname] || routes["/"];
+    $app.innerHTML = route.template();
+}
+
+document.addEventListener("DOMContentLoaded", initRouter);
