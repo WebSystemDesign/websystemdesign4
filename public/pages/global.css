@@ -1,0 +1,130 @@
+/*전체 파일에 적용되는 스타일 파일*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* 고정 배경화면 설정 */
+  body {
+    background-image: url('../sources/backgroundImg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  /*-----------------------------------------------------------------------------*/
+  /* 헤더 스타일 */
+  .global-header {
+    background-color: #000;
+    color: white;
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;  /* 세로 정렬 */
+  }
+  
+  .header-content {
+    width: 100%;        
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* 메뉴 스타일 */
+  .nav-menu {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* 햄버거 버튼 (기본은 숨김) */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* 반응형 처리 */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+
+  
+    .nav-menu.show {
+      display: flex;
+    }
+  
+ 
+  }
+  /*-----------------------------------------------------------------------------*/
+
+  .header-top {
+    font-size: 0.85rem;
+    text-align: right;
+    padding: 8px 20px;
+    background-color: #000000;
+  }
+  
+  .header-top::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  /* 로그인 텍스트를 버튼처럼 */
+  .header-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .header-top a, .header-top button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /*-----------------------------------------------------------------------------*/
+
+
+
+  .App {
+    padding-top: 100px; /* 헤더만큼 아래로 밀기 */
+  }
+  
