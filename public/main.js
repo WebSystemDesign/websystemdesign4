@@ -14,9 +14,9 @@ export const changeUrl = async (requestedUrl) => {
 
     // game 페이지 구현
     if (requestedUrl === "/game") {
-        const {default: loadAllGameData} = await import("./pages/game/game_image_loader.js");
+        const { displayGames } = await import("./pages/game/game_image_loader.js");
         requestAnimationFrame(() => {
-            loadAllGameData();
+            displayGames();
         });
     }
 };
