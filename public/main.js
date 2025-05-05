@@ -1,11 +1,15 @@
 import Main from "./pages/home/main_page.js";
 import Game from "./pages/game/game_page.js";
+import Login from "./pages/login/login_page.js";
+import Signup from "./pages/signup/signup_page.js";
 
 const $app = document.querySelector(".App");
 
 const routes = {
    "/": Main, 
    "/game": Game,
+   "/login": Login,
+   "/signup": Signup,
 };
 
 export const changeUrl = async (requestedUrl) => {
@@ -18,7 +22,49 @@ export const changeUrl = async (requestedUrl) => {
         requestAnimationFrame(() => {
             displayGames();
         });
-    }
+    } 
+    // login 페이지 구현
+    else if (requestedUrl === "/login") {
+        const loginBtn = document.getElementById("loginBtn");
+        loginBtn.addEventListener("click", async () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            try {
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+                alert("success");
+                changeUrl("/main");
+            } catch(error) {
+                document.getElementById("errorMsg").innerText = error.message;
+            }
+        })
+    } 
+    // signup 페이지 
+    else if (requestedUrl === "/signup") {
+        const signupBtn = document.getElementById("signupBtn");
+        signupBtn.addEventListener("click", async () => {
+          const email = document.getElementById("signupEmail").value;
+          const password = document.getElementById("signupPassword").value;
+    
+          try {
+            const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+            const user = userCredential.user;
+    
+            // Firestore에 users/{uid} 문서 생성
+            const db = firebase.firestore();
+            await db.collection("users").doc(user.uid).set({
+              email: user.email,
+              posts: [],
+              gears: []
+            });
+    
+            alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+            changeUrl("/login");
+          } catch (error) {
+            document.getElementById("signupError").innerText = error.message;
+          }
+    });
+}
+
 };
 
 window.addEventListener("popstate", () => {
@@ -45,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
+/*페이지 간 이동*/
 document.addEventListener('click', e => {
     const link = e.target.closest('a');
     if (link && link.getAttribute('href').startsWith('/')) {
