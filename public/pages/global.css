@@ -4,6 +4,8 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   /* 고정 배경화면 설정 */
@@ -84,7 +86,6 @@ html, body {
 
 /*로그인회원가입마이페이지*/
   .login-area {
-    position: flex;
     top: 0;
     right: 0;
     display: flex;
@@ -107,7 +108,32 @@ html, body {
     height: 30px;
     background-color: white;
   }
- 
+ /*footer-----------------------------------------------------------------------------*/
+  .global-footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    width: 100%;              /* 가득 차게 */
+    max-width: none;          /* 최대 너비 제한 해제 */
+    margin: 0;                /* 가운데 정렬 해제 */
+    padding: 17px 0px 17px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  .media{
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 27px;
+  }
+
   /*반응형 처리-----------------------------------------------------------------------------*/
   /*기존 메뉴버튼 숨김, 햄버거 버튼 팝업*/
   @media (max-width: 948px) {
@@ -166,6 +192,9 @@ html, body {
 
 
   .App {
-    padding-top: 130px; /* 헤더만큼 아래로 밀기 */
+    flex: 1;        
+    padding-top: 40px;   /* header와 거리 */
+    padding-bottom: 40px; /* footer와 거리 */
+
   }
   
