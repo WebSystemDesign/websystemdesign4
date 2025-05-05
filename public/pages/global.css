@@ -8,7 +8,7 @@ html, body {
   
   /* 고정 배경화면 설정 */
   body {
-    background-image: url('../../sources/backgroundImg.png');
+    background-image: url('../sources/backgroundImg.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
