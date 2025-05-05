@@ -45,3 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
+document.addEventListener('click', e => {
+    const link = e.target.closest('a');
+    if (link && link.getAttribute('href').startsWith('/')) {
+      e.preventDefault();
+      changeUrl(link.getAttribute('href'));
+    }
+});
+  
