@@ -1,13 +1,22 @@
-.login-container{
+/* 로그인 전체 컨테이너 */
+.login-container {
     width: 70%;
-    /*height: 100%;*/
-    background-color: rgba(0, 0, 0, 0.46);
-
+    height: 100vh;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.46);
+    color: #ffff;
 }
-.login-inner-container{
-    width: 55%;
+
+/* 로그인 내부 박스 */
+.login-inner-container {
+    background-color: #0A1A2F;
+    padding: 40px;
+    margin-top: 10%;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
+
