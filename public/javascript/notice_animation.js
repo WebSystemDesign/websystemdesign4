@@ -1,7 +1,7 @@
 const notices = document.querySelectorAll('.notice-item');
 const noticeContent = document.getElementById('notice-content');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('notice-prev-btn');
+const nextBtn = document.getElementById('notice-next-btn');
 
 let currentIndex = 0;
 
