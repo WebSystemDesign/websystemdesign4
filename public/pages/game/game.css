@@ -1,0 +1,11 @@
+.game-search-box {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+.game-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }

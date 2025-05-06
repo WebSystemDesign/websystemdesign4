@@ -3,10 +3,10 @@ import { loadAllGameData } from "./firebase_image.js";
 
 export async function displayGames() {
   const gameData = await loadAllGameData();
-  const container = document.getElementById("gameContainer");
+  const container = document.getElementById("game-container");
 
   if (!container) {
-    console.error("gameContainer not found!");
+    console.error("game-container not found!");
     return;
   }
 
@@ -15,8 +15,6 @@ export async function displayGames() {
     gameDiv.innerHTML = `
       <h2>${gameName}</h2>
       <img src="${imageUrl}" alt="${gameName}" style="width:200px;" />
-      <p><strong>최소 사양:</strong> ${minimum}</p>
-      <p><strong>권장 사양:</strong> ${recommended}</p>
     `;
     container.appendChild(gameDiv);
   }
