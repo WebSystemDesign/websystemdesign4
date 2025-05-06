@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", initRouter);
     changeUrl(window.location.pathname);
 
 /*메뉴 토글 동작 */
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
   
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
   });
+*/
   
 /*페이지 간 이동*/
 document.addEventListener('click', e => {

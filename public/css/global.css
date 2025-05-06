@@ -82,6 +82,10 @@ html, body {
     color: white;
     cursor: pointer;
   }
+
+  #mobile-menu {
+    display: none;
+  }
   
 
 /*로그인회원가입마이페이지*/
@@ -136,15 +140,21 @@ html, body {
 
   /*반응형 처리-----------------------------------------------------------------------------*/
   /*기존 메뉴버튼 숨김, 햄버거 버튼 팝업*/
-  @media (max-width: 948px) {
+  @media (max-width: 1080px) {
     .menu-toggle {
       display: block;
     }
     .nav-menu {
       display: none; 
     }
-    .nav-menu.show {
-      display: flex;
+    .login-area {
+      display: none;
+    }
+    .notice-title {
+      display: none;
+    }
+    #mobile-menu {
+      display: block;
     }
   }
   /*로그인라인 사라짐*/
