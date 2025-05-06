@@ -4,19 +4,130 @@
     height: 100vh;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(0,0,0,0.46);
-    color: #ffff;
+    color: #fff;
 }
 
 /* 로그인 내부 박스 */
 .login-inner-container {
     background-color: #0A1A2F;
-    padding: 40px;
+    padding: 60px;
     margin-top: 10%;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
+    position: relative;
+}
+
+#login-logo{
+    width: 400px;
+    height: auto;
+}
+
+#login-text {
     text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+#login-line{
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    margin: 10px 0 20px 0;
+}
+
+#login-email-label,#login-password-label{
+    text-align: left;
+}
+
+#login-email,#login-password{
+    background-color: #24324476;
+    
+}
+
+/* 장식용 동그라미 공통 스타일 */
+.login-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #21E6BB; 
+    border-radius: 50%;
+    position: absolute;
+    top: 25px; 
+    z-index: 2;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+/* 십자 라인용 가상 요소 */
+.login-circle::before,
+.login-circle::after {
+    content: "";
+    position: absolute;
+    background-color: #444;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 가로선 */
+.login-circle::before {
+    width: 12px;
+    height: 3px;
+}
+
+/* 세로선 */
+.login-circle::after {
+    width: 3px;
+    height: 12px;
+}
+
+/* 왼쪽 나사 */
+#login-circle-left{
+    left: 30px; /* 박스 왼쪽 기준 맞추기 */
+}
+
+/* 오른쪽 나사 */
+#login-circle-right{
+    right: 30px;
+}
+
+.login-button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.login-button-group button {
+    flex: 1;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 로그인 버튼 스타일 */
+#loginBtn {
+    background-color: #21E6BB;
+    color: #000; 
+}
+
+/* 회원가입 버튼 스타일 */
+#signupBtn {
+    background-color: #D9D9D9;
+    color: #000;
+}
+
+/* 호버 효과 */
+#loginBtn:hover {
+    background-color: #1cc1a0;
+}
+
+#signupBtn:hover {
+    background-color: #bfbfbf;
 }
 
