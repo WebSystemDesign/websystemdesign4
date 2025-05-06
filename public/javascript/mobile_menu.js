@@ -1,3 +1,4 @@
+/* 미디어 쿼리 모바일 햄버거 버튼 동작 */
 const toggleBtn = document.getElementById("menu-toggle");
 const menu = document.getElementById("mobile-menu");
 

@@ -1,3 +1,4 @@
+/* 공지사항 전환 애니메이션 */
 const notices = document.querySelectorAll('.notice-item');
 const noticeContent = document.getElementById('notice-content');
 const prevBtn = document.getElementById('notice-prev-btn');

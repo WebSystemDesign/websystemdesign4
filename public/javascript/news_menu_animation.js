@@ -1,3 +1,4 @@
+/* 최신 뉴스 드롭다운 애니메이션 적용 */
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('menu-dropdown-toggle');
     const menu = document.getElementById('menu-dropdown-item');
