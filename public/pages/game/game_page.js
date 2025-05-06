@@ -7,8 +7,6 @@ class Game {
             </form>
         `;
     }
-
-
 }
 
 export default new Game();
