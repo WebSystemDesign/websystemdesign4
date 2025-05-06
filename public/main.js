@@ -2,6 +2,8 @@ import Main from "./pages/home/main_page.js";
 import Game from "./pages/game/game_page.js";
 import Login from "./pages/login/login_page.js";
 import Signup from "./pages/signup/signup_page.js";
+import NewsGame from "./pages/news_game/news_game_page.js";
+import NewsGear from "./pages/news_gear/news_gear_page.js";
 
 const $app = document.querySelector(".App");
 
@@ -10,6 +12,8 @@ const routes = {
    "/game": Game,
    "/login": Login,
    "/signup": Signup,
+   "/news_game": NewsGame,
+   "/news_gear": NewsGear
 };
 
 export const changeUrl = async (requestedUrl) => {
