@@ -169,3 +169,18 @@ html, body {
     padding-top: 130px; /* 헤더만큼 아래로 밀기 */
   }
   
+  /*-----------------------------------------------------------------------------*/
+  
+  /*game_page 전용 css*/
+  /*검색창*/
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+  /*카드 리스트*/
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
