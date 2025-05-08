@@ -1,7 +1,9 @@
 class NewsGame {
     template() {
         return `
-            <div>game news</div>
+            <div>
+                <h1>game news</h1>
+            </div>
         `;
     }
 }

@@ -1,7 +1,9 @@
 class NewsGear {
     template() {
         return `
-            <div>gear news</div>
+            <div>
+                <h1>gear news</h1>
+            </div>
         `;
     }
 }

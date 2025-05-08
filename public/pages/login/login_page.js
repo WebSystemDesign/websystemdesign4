@@ -2,7 +2,7 @@ class Login {
     template() {
         return `
             <div class = "login-container">
-                <img id = "login-logo" src = "./sources/logo.png" alt="logo-image">
+                <img id = "login-logo" src = "../../sources/logo_large.png" alt="logo-image">
                 <div class = "login-inner-container">
                     <div class="login-circle" id="login-circle-left"></div>
                     <div class="login-circle" id="login-circle-right"></div>

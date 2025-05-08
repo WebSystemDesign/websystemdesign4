@@ -33,6 +33,5 @@ export async function loadAllGameData() {
     gameData[name] = [imageUrl, minimum, recommended];
   });
 
-  console.log(gameData); // 👉 최종 결과 확인
   return gameData;
 }
