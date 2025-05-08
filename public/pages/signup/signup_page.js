@@ -2,7 +2,7 @@ class Signup {
     template() {
         return `
             <div class = "signup-container">
-                <img id = "signup-logo" src = "./sources/logo.png" alt="logo-image">
+                <img id = "signup-logo" src = "../../sources/logo_large.png" alt="logo-image">
                 <div class = "signup-inner-container">
                     <div class="signup-circle" id="signup-circle-left"></div>
                     <div class="signup-circle" id="signup-circle-right"></div>

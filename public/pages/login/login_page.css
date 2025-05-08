@@ -47,7 +47,12 @@
 
 #login-email,#login-password{
     background-color: #24324476;
-    
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 /* 장식용 동그라미 공통 스타일 */
@@ -131,3 +136,62 @@
     background-color: #bfbfbf;
 }
 
+
+/* 반응형 설정 */
+@media screen and (max-width: 1024px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .login-inner-container {
+        padding: 40px;
+    }
+
+    #login-logo {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login-inner-container {
+        padding: 30px;
+    }
+
+    #login-logo {
+        width: 250px;
+    }
+
+    .login-button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .login-button-group button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-container {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .login-inner-container {
+        padding: 20px;
+    }
+
+    #login-logo {
+        width: 200px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #login-text {
+        font-size: 20px;
+    }
+}
