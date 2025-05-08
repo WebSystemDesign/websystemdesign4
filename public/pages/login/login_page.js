@@ -13,8 +13,8 @@ class Login {
                     <label id = "login-password-label" for="password">비밀번호</label>
                     <input type="password" id="login-password" placeholder="비밀번호 입력"><br>
                     <div class="login-button-group">
-                        <button id="loginBtn">로그인</button>
-                        <button id="signupBtn">회원가입</button>
+                        <button id="login-loginBtn">로그인</button>
+                        <button id="login-signupBtn">회원가입</button>
                     </div>
                     <p id="errorMsg" style="color:red"></p>
                 </div>
