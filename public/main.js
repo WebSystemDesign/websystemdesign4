@@ -82,19 +82,6 @@ function initRouter() {
 
 document.addEventListener("DOMContentLoaded", initRouter);
     changeUrl(window.location.pathname);
-
-/*메뉴 토글 동작 */
-/* document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-  
-    if (toggleButton && navMenu) {
-        toggleButton.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
-        });
-    }
-  });
-*/
   
 /*페이지 간 이동*/
 document.addEventListener('click', e => {
@@ -102,6 +89,15 @@ document.addEventListener('click', e => {
     if (link && link.getAttribute('href').startsWith('/')) {
       e.preventDefault();
       changeUrl(link.getAttribute('href'));
+    }
+
+    /*main_page 버튼*/
+    if (e.target.id === 'gameBtn') {
+        changeUrl('/game');
+    } else if (e.target.id === 'game-news') {
+        changeUrl('/news_game');
+    } else if (e.target.id === 'product-news') {
+        changeUrl('/news_gear');
     }
 });
   
