@@ -4,6 +4,7 @@ import Login from "./pages/login/login_page.js";
 import Signup from "./pages/signup/signup_page.js";
 import NewsGame from "./pages/news_game/news_game_page.js";
 import NewsGear from "./pages/news_gear/news_gear_page.js";
+import { setupAuthHandlers } from "./user.js";
 
 const $app = document.querySelector(".App");
 
@@ -28,47 +29,11 @@ export const changeUrl = async (requestedUrl) => {
         });
     } 
     // login 페이지 구현
-    else if (requestedUrl === "/login") {
-        const loginBtn = document.getElementById("loginBtn");
-        loginBtn.addEventListener("click", async () => {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            try {
-                await firebase.auth().signInWithEmailAndPassword(email, password);
-                alert("success");
-                changeUrl("/main");
-            } catch(error) {
-                document.getElementById("errorMsg").innerText = error.message;
-            }
-        })
-    } 
-    // signup 페이지 
-    else if (requestedUrl === "/signup") {
-        const signupBtn = document.getElementById("signupBtn");
-        signupBtn.addEventListener("click", async () => {
-          const email = document.getElementById("signupEmail").value;
-          const password = document.getElementById("signupPassword").value;
-    
-          try {
-            const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-            const user = userCredential.user;
-    
-            // Firestore에 users/{uid} 문서 생성
-            const db = firebase.firestore();
-            await db.collection("users").doc(user.uid).set({
-              email: user.email,
-              posts: [],
-              gears: []
-            });
-    
-            alert("회원가입 성공! 로그인 페이지로 이동합니다.");
-            changeUrl("/login");
-          } catch (error) {
-            document.getElementById("signupError").innerText = error.message;
-          }
-    });
-}
-
+    else if (requestedUrl === "/login" || requestedUrl === "/signup") {
+        requestAnimationFrame(() => {
+            setupAuthHandlers(requestedUrl);
+        });
+    }    
 };
 
 window.addEventListener("popstate", () => {
