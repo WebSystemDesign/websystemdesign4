@@ -4,10 +4,10 @@ import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-
 
 export function setupAuthHandlers(page) {
     if (page === "/login") {
-        const loginBtn = document.getElementById("loginBtn");
+        const loginBtn = document.getElementById("login-loginBtn");
         loginBtn.addEventListener("click", async () => {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
             try {
                 await signInWithEmailAndPassword(auth, email, password);
                 alert("로그인 성공!");
