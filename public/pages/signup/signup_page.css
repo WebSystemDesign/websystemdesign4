@@ -6,16 +6,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px 20px;
     justify-content: center;
     background-color: rgba(0,0,0,0.46);
     color: #fff;
+    box-sizing: border-box;
 }
 
 /* 로그인 내부 박스 */
 .signup-inner-container {
     background-color: #0A1A2F;
     padding: 60px;
-    margin-top: 10%;
+    
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -24,8 +26,10 @@
 }
 
 #signup-logo{
-    width: 400px;
+    width: 100px;
     height: auto;
+    align-self: flex-start;
+    margin-bottom: 20px;
 }
 
 #signup-text {
@@ -95,18 +99,20 @@
 
 .signup-button-group {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: auto;
 }
 
 .signup-button-group button {
-    flex: 1;
-    padding: 10px;
+    padding: 6px 12px;           /* 작게 */
+    font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: fit-content;
 }
 
 /* 회원가입 버튼 스타일 */
@@ -130,3 +136,92 @@
     background-color: #bfbfbf;
 }
 
+/* 공통 입력 필드 스타일 정리 */
+#signup-email,
+#signup-password,
+#signup-password-check {
+    background-color: #24324476;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 반응형 로고 */
+#signup-logo {
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 회원가입 내부 박스 */
+.signup-inner-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px 30px;
+    box-sizing: border-box;
+}
+
+/* 미디어 쿼리 추가 */
+@media screen and (max-width: 768px) {
+    .signup-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .signup-inner-container {
+        padding: 30px 20px;
+    }
+
+    #signup-logo {
+        width: 70%;
+    }
+
+    .signup-button-group {
+        flex-direction: column;
+    }
+
+    .signup-button-group button {
+        width: 100%;
+    }
+
+    .signup-circle {
+        top: 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .signup-circle::before {
+        width: 8px;
+        height: 2px;
+    }
+
+    .signup-circle::after {
+        width: 2px;
+        height: 8px;
+    }
+
+    #signup-circle-left,
+    #signup-circle-right {
+        left: 20px;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #signup-logo {
+        width: 80%;
+    }
+
+    #signup-text {
+        font-size: 1.5rem;
+    }
+
+    .signup-inner-container {
+        padding: 20px 15px;
+    }
+}
