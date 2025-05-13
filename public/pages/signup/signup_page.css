@@ -1,4 +1,4 @@
-/* 로그인 전체 컨테이너 */
+/* 회원가입 전체 컨테이너 */
 .signup-container {
     width: 70%;
     height: 100vh;
@@ -13,11 +13,10 @@
     box-sizing: border-box;
 }
 
-/* 로그인 내부 박스 */
+/* 회원가입 내부 박스 */
 .signup-inner-container {
     background-color: #0A1A2F;
     padding: 60px;
-    
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -26,10 +25,11 @@
 }
 
 #signup-logo{
-    width: 100px;
+    max-width: 350px;
+    width: 350px;
     height: auto;
-    align-self: flex-start;
-    margin-bottom: 20px;
+    align-self: center;
+    transition: width 0.3s ease;
 }
 
 #signup-text {
@@ -105,7 +105,7 @@
 }
 
 .signup-button-group button {
-    padding: 6px 12px;           /* 작게 */
+    padding: 6px 12px;           
     font-size: 14px;
     font-weight: bold;
     border: none;
@@ -174,11 +174,12 @@
     }
 
     .signup-inner-container {
+        width: 90%;
         padding: 30px 20px;
     }
 
     #signup-logo {
-        width: 70%;
+        width: 290px;
     }
 
     .signup-button-group {
@@ -214,7 +215,7 @@
 
 @media screen and (max-width: 480px) {
     #signup-logo {
-        width: 80%;
+        width: 190px;
     }
 
     #signup-text {
