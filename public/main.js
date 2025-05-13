@@ -7,7 +7,6 @@ import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import { setupAuthHandlers } from "./user.js";
-import { waitForAuthState } from "./auth_state.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
 
@@ -36,9 +35,7 @@ export const changeUrl = async (requestedUrl) => {
     // game 페이지 구현
     if (requestedUrl === "/game") {
         const { displayGames } = await import("./pages/game/game_image_loader.js");
-        requestAnimationFrame(() => {
-            displayGames();
-        });
+        await displayGames();
     } 
     // login , signup 페이지 구현
     else if (requestedUrl === "/login" || requestedUrl === "/signup") {
