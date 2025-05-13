@@ -5,6 +5,7 @@ import Signup from "./pages/signup/signup_page.js";
 import NewsGame from "./pages/news_game/news_game_page.js";
 import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
+import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import { setupAuthHandlers } from "./user.js";
 
 const $app = document.querySelector(".App");
@@ -17,11 +18,17 @@ const routes = {
    "/news_game": NewsGame,
    "/news_gear": NewsGear,
    "/mypage": Mypage,
+   "/desktop_select": DesktopSelect,
 };
 
 export const changeUrl = async (requestedUrl) => {
     history.pushState(null, null, requestedUrl);
-    $app.innerHTML = routes[requestedUrl].template();
+    const page = routes[requestedUrl];
+    if (page.template.constructor.name === "AsyncFunction") {
+        $app.innerHTML = await page.template();
+    } else {
+        $app.innerHTML = page.template();
+    }
 
     // game 페이지 구현
     if (requestedUrl === "/game") {
@@ -30,7 +37,7 @@ export const changeUrl = async (requestedUrl) => {
             displayGames();
         });
     } 
-    // login 페이지 구현
+    // login , signup 페이지 구현
     else if (requestedUrl === "/login" || requestedUrl === "/signup") {
         requestAnimationFrame(() => {
             setupAuthHandlers(requestedUrl);
