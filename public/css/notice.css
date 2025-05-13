@@ -1,0 +1,34 @@
+/* 공지사항 바 */
+.notice-bar {
+    height: 50px;
+    position: relative;
+}
+
+.notice-title {
+    font-weight: bold;
+    color: black;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.notice-text {
+    width: 300px;
+    color: black;
+    overflow: hidden;
+}
+
+#notice-content {
+    transition: transform 0.4s ease;
+}
+
+.notice-item {
+    height: 24px;
+    line-height: 24px;
+}
+
+.notice-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 10px;
+}

@@ -1,11 +1,26 @@
 class Signup {
     template() {
         return `
-            <h1>회원가입</h1>
-            <input type="email" id="signupEmail" placeholder="이메일 입력"><br>
-            <input type="password" id="signupPassword" placeholder="비밀번호 입력"><br>
-            <button id="signupBtn">회원가입</button>
-            <p id="signupError" style="color:red"></p>
+            <div class = "signup-container">
+                <img id = "signup-logo" src = "../../sources/logo_large.png" alt="logo-image">
+                <div class = "signup-inner-container">
+                    <div class="signup-circle" id="signup-circle-left"></div>
+                    <div class="signup-circle" id="signup-circle-right"></div>
+                    <h1 id="signup-text">회원가입</h1>
+                    <div id="signup-line"></div>
+                    <label id = "signup-email-label" for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" placeholder="123@email.com"><br>
+                    <label id = "signup-password-label" for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" placeholder="비밀번호 입력"><br>
+                    <label id = "signup-password-check-label" for="signup-password">비밀번호 확인</label>
+                    <input type="password" id="signup-password-check" placeholder="비밀번호 확인"><br>
+                    <div class="signup-button-group">
+                        <button id="signup-signupBtn">회원가입</button>
+                        <button id="signup-resetBtn">지우기</button>
+                    </div>
+                    <p id="errorMsg" style="color:red"></p>
+                </div>
+            </div>
         `;
     }
 }

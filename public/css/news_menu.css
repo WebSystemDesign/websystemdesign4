@@ -1,0 +1,41 @@
+/* 최신 뉴스 메뉴 드롭다운 */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-item {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0A1A2F;
+    color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 0;
+    margin-top: 13px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(to bottom, #132c4d, #0A1A2F);
+}
+
+.dropdown-item.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-item li a:hover {
+    background-color: #0A1A2F;
+}
