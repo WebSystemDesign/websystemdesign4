@@ -13,6 +13,7 @@ export function setupLogoutButton() {
   logoutBtn.addEventListener("click", async () => {
     try {
       await signOut(auth);
+      document.cookie = "isAdmin=; Max-Age=0; path=/";
       sessionStorage.clear();
       alert("로그아웃 되었습니다.");
       changeUrl("/");  // SPA 라우팅
