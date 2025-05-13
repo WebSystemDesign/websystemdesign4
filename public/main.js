@@ -74,6 +74,19 @@ async function initRouter() {
         $app.innerHTML = page.template();
     }
 
+    if (path === "/game") {
+        const { displayGames } = await import("./pages/game/game_image_loader.js");
+        await displayGames();
+    } else if (path === "/login" || path === "/signup") {
+        requestAnimationFrame(() => {
+            setupAuthHandlers(path);
+        });
+    } else if (path === "/mypage") {
+        requestAnimationFrame(() => {
+            setupLogoutButton();
+        });
+    }
+
     await handleHeaderLoginUI();
 }
 
