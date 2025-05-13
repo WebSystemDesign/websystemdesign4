@@ -7,6 +7,9 @@ import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import { setupAuthHandlers } from "./user.js";
+import { waitForAuthState } from "./auth_state.js";
+import { handleHeaderLoginUI } from "./logged_in.js";
+import { setupLogoutButton } from "./pages/mypage/logout.js";
 
 const $app = document.querySelector(".App");
 
@@ -42,7 +45,13 @@ export const changeUrl = async (requestedUrl) => {
         requestAnimationFrame(() => {
             setupAuthHandlers(requestedUrl);
         });
-    }    
+    }  
+    else if (requestedUrl === "/mypage") {
+        requestAnimationFrame(() => {
+            setupLogoutButton();
+        });
+    }
+    await handleHeaderLoginUI();
 };
 
 window.addEventListener("popstate", async () => {
@@ -54,6 +63,8 @@ window.addEventListener("popstate", async () => {
     } else {
         $app.innerHTML = page.template();
     }
+
+    await handleHeaderLoginUI();
 });
 
 async function initRouter() {
@@ -65,6 +76,8 @@ async function initRouter() {
     } else {
         $app.innerHTML = page.template();
     }
+
+    await handleHeaderLoginUI();
 }
 
 

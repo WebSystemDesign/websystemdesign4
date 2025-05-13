@@ -43,7 +43,9 @@ class Mypage {
                         </ul>
                     </details>
                 </div>
+                <button type="button" id="logout">로그아웃</button>
             </div>
+            
         `;
     }
 }
