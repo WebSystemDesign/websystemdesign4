@@ -14,8 +14,8 @@
 /* 로그인 내부 박스 */
 .login-inner-container {
     background-color: #0A1A2F;
-    padding: 60px;
-    margin-top: 10%;
+    padding: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -24,8 +24,11 @@
 }
 
 #login-logo{
+    max-width: 400px;
     width: 400px;
     height: auto;
+    align-self: center;
+    transition: width 0.3s ease;
 }
 
 #login-text {
@@ -136,6 +139,11 @@
     background-color: #bfbfbf;
 }
 
+#login-email-label,
+#login-password-label {
+    display: block;
+    margin-bottom: 5px;
+}
 
 /* 반응형 설정 */
 @media screen and (max-width: 1024px) {
@@ -144,11 +152,11 @@
     }
 
     .login-inner-container {
-        padding: 40px;
+        padding: 20px;
     }
 
     #login-logo {
-        width: 300px;
+        width: 340px;
     }
 }
 
@@ -158,7 +166,7 @@
     }
 
     #login-logo {
-        width: 250px;
+        width: 260px;
     }
 
     .login-button-group {
@@ -182,7 +190,7 @@
     }
 
     #login-logo {
-        width: 200px;
+        width: 260px;
     }
 
     input[type="email"],

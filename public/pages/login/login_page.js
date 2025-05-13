@@ -8,9 +8,9 @@ class Login {
                     <div class="login-circle" id="login-circle-right"></div>
                     <h1 id="login-text">로그인</h1>
                     <div id="login-line"></div>
-                    <label id = "login-email-label" for="email">이메일</label>
+                    <label id = "login-email-label" for="login-email">이메일</label>
                     <input type="email" id="login-email" placeholder="이메일 입력"><br>
-                    <label id = "login-password-label" for="password">비밀번호</label>
+                    <label id = "login-password-label" for="login-password">비밀번호</label>
                     <input type="password" id="login-password" placeholder="비밀번호 입력"><br>
                     <div class="login-button-group">
                         <button id="login-loginBtn">로그인</button>
