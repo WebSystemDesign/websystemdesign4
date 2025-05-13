@@ -39,5 +39,4 @@ class NewsGame {
     }
 }
 
-const newsGame = new NewsGame();
-document.getElementById('app').innerHTML = newsGame.template();
+export default new NewsGame();
