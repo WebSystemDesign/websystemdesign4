@@ -1,5 +1,3 @@
-import "news_game_page.css";
-
 class NewsGame {
     template() {
         return `

@@ -5,11 +5,12 @@ class Mypage {
         const userInfo = await getCurrentUserInfo();
         const email = userInfo ? userInfo.email : "로그인 정보 없음";
         const signupDate = userInfo ? userInfo.createdAt:"로그인 정보 없음";
+        let pastTime;
         if (signupDate!="로그인 정보 없음"){
             const today = new Date();
             pastTime = today - signupDate;
-            pastTime = Math.round(pastTime/(1000*60*60*24));
-        }else{
+            pastTime = Math.round(pastTime/(1000*60*60*24)) + 1;
+        } else {
             pastTime = "???";
         }
 

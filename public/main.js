@@ -45,17 +45,33 @@ export const changeUrl = async (requestedUrl) => {
     }    
 };
 
-window.addEventListener("popstate", () => {
-    $app.innerHTML = (routes[window.location.pathname] || routes["/"]).template();
+window.addEventListener("popstate", async () => {
+    const path = window.location.pathname;
+    const page = routes[path] || routes["/"];
+
+    if (page.template.constructor.name === "AsyncFunction") {
+        $app.innerHTML = await page.template();
+    } else {
+        $app.innerHTML = page.template();
+    }
 });
 
-function initRouter() {
-    const route = routes[window.location.pathname] || routes["/"];
-    $app.innerHTML = route.template();
+async function initRouter() {
+    const path = window.location.pathname;
+    const page = routes[path] || routes["/"];
+
+    if (page.template.constructor.name === "AsyncFunction") {
+        $app.innerHTML = await page.template();
+    } else {
+        $app.innerHTML = page.template();
+    }
 }
 
-document.addEventListener("DOMContentLoaded", initRouter);
-    changeUrl(window.location.pathname);
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await initRouter();
+});
+
   
 /*페이지 간 이동*/
 document.addEventListener('click', e => {
