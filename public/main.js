@@ -23,7 +23,12 @@ const routes = {
 
 export const changeUrl = async (requestedUrl) => {
     history.pushState(null, null, requestedUrl);
-    $app.innerHTML = routes[requestedUrl].template();
+    const page = routes[requestedUrl];
+    if (page.template.constructor.name === "AsyncFunction") {
+        $app.innerHTML = await page.template();
+    } else {
+        $app.innerHTML = page.template();
+    }
 
     // game 페이지 구현
     if (requestedUrl === "/game") {

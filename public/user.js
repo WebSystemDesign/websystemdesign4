@@ -1,6 +1,7 @@
 import { auth, db } from './firebase.js';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
 import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
+import { serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
 
 export function setupAuthHandlers(page) {
     if (page === "/login") {
@@ -37,7 +38,8 @@ export function setupAuthHandlers(page) {
                 await setDoc(doc(db, "users", user.uid), {
                     email: user.email,
                     posts: [],
-                    gears: []
+                    gears: [],
+                    createdAt: serverTimestamp()
                 });
 
                 alert("회원가입 성공! 로그인 페이지로 이동합니다.");
