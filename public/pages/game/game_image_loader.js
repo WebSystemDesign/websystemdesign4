@@ -1,24 +1,47 @@
 import { loadAllGameData } from "./firebase_image.js";
 
-export async function displayGames() {
-  const gameData = await loadAllGameData();
-  const container = document.getElementById("game-container");
+let cachedGameData = null;
 
-  if (!container) {
-    console.error("game-container not found!");
-    return;
+export async function displayGames() {
+  cachedGameData = await loadAllGameData();
+  displayFilteredGames("");  // 전체 게임 표시
+
+  // 🔍 검색 이벤트 연결
+  const searchForm = document.querySelector(".game-search-box");
+  const searchInput = document.querySelector(".game-search-text");
+
+  if (searchForm && searchInput) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const keyword = searchInput.value.trim();
+      displayFilteredGames(keyword);
+    });
   }
+
+  console.log("게임 데이터 불러옴");
+}
+
+function displayFilteredGames(keyword) {
+  const container = document.getElementById("game-container");
+  if (!container || !cachedGameData) return;
+
+  container.innerHTML = "";  // 기존 게임 목록 초기화
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // 한 번만 애니메이션 적용
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  for (const [gameName, [imageUrl, minimum, recommended]] of Object.entries(gameData)) {
+  for (const [gameName, [imageUrl, minimum, recommended]] of Object.entries(cachedGameData)) {
+    // ✅ 키워드가 없거나 이름에 포함될 경우에만 출력
+    if (keyword && !gameName.toLowerCase().includes(keyword.toLowerCase())) {
+      continue;
+    }
+
     const gameDiv = document.createElement("div");
     gameDiv.className = "game-item";
     gameDiv.dataset.name = gameName;
@@ -26,14 +49,12 @@ export async function displayGames() {
     gameDiv.innerHTML = `
       <div class="image-wrapper">
         <img src="${imageUrl}" alt="${gameName}" />
-        <div class="overlay">
-          ${gameName}
-        </div>
+        <div class="overlay">${gameName}</div>
       </div>
     `;
 
     container.appendChild(gameDiv);
-    observer.observe(gameDiv); // 애니메이션 감시 시작
+    observer.observe(gameDiv);
 
     const overlay = gameDiv.querySelector(".overlay");
 
@@ -58,3 +79,4 @@ export async function displayGames() {
     }
   }
 }
+
