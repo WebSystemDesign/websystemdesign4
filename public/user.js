@@ -1,6 +1,6 @@
 import { auth, db } from './firebase.js';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
-import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
+import { doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
 import { serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
 
 export function setupAuthHandlers(page) {
@@ -10,7 +10,18 @@ export function setupAuthHandlers(page) {
             const email = document.getElementById("login-email").value;
             const password = document.getElementById("login-password").value;
             try {
-                await signInWithEmailAndPassword(auth, email, password);
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // 관리자 목록 조회
+                const adminRef = doc(db, "adminUsers", "list");
+                const adminSnap = await getDoc(adminRef);
+                if (adminSnap.exists()) {
+                    const adminList = adminSnap.data().email;
+                    const isAdmin = adminList.includes(user.email);
+                    document.cookie = `isAdmin=${isAdmin}; path=/`;
+                }
+
                 alert("로그인 성공!");
                 window.location.href = "/";
             } catch (error) {
@@ -42,10 +53,11 @@ export function setupAuthHandlers(page) {
                     createdAt: serverTimestamp()
                 });
 
+                // 관리자 여부는 회원가입 시에는 바로 확인하지 않아도 됨 (일단 생략해도 무방)
                 alert("회원가입 성공! 로그인 페이지로 이동합니다.");
                 window.location.href = "/login";
             } catch (error) {
-                console.error(error)
+                console.error(error);
                 document.getElementById("errorMsg").innerText = error.message || "회원가입에 실패하였습니다.";
             }
         });

@@ -7,6 +7,8 @@ import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import { setupAuthHandlers } from "./user.js";
+import { handleHeaderLoginUI } from "./logged_in.js";
+import { setupLogoutButton } from "./pages/mypage/logout.js";
 
 const $app = document.querySelector(".App");
 
@@ -40,29 +42,58 @@ export const changeUrl = async (requestedUrl) => {
     // game 페이지 구현
     if (requestedUrl === "/game") {
         const { displayGames } = await import("./pages/game/game_image_loader.js");
-        requestAnimationFrame(() => {
-            displayGames();
-        });
+        await displayGames();
     } 
     // login , signup 페이지 구현
     else if (requestedUrl === "/login" || requestedUrl === "/signup") {
         requestAnimationFrame(() => {
             setupAuthHandlers(requestedUrl);
         });
-    }    
+    }  
+    else if (requestedUrl === "/mypage") {
+        requestAnimationFrame(() => {
+            setupLogoutButton();
+        });
+    }
+    await handleHeaderLoginUI();
 };
+
 
 window.addEventListener("popstate", () => {
     changeUrl(window.location.pathname);
 });
 
-function initRouter() {
-    const route = routes[window.location.pathname] || routes["/"];
-    $app.innerHTML = route.template();
+async function initRouter() {
+    const path = window.location.pathname;
+    const page = routes[path] || routes["/"];
+
+    if (page.template.constructor.name === "AsyncFunction") {
+        $app.innerHTML = await page.template();
+    } else {
+        $app.innerHTML = page.template();
+    }
+
+    if (path === "/game") {
+        const { displayGames } = await import("./pages/game/game_image_loader.js");
+        await displayGames();
+    } else if (path === "/login" || path === "/signup") {
+        requestAnimationFrame(() => {
+            setupAuthHandlers(path);
+        });
+    } else if (path === "/mypage") {
+        requestAnimationFrame(() => {
+            setupLogoutButton();
+        });
+    }
+
+    await handleHeaderLoginUI();
 }
 
-document.addEventListener("DOMContentLoaded", initRouter);
-    changeUrl(window.location.pathname);
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await initRouter();
+});
+
   
 /*페이지 간 이동*/
 document.addEventListener('click', e => {
