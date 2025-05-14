@@ -1,7 +1,6 @@
 /*특정 페이지 공통 배경-반투명 박스*/
 .wallpaper-container {
     width: 70%;
-    height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -11,5 +10,8 @@
     background-color: rgba(0,0,0,0.46);
     color: #fff;
     box-sizing: border-box;
+    height: auto; /* 자동 높이 */
+    min-height: 100vh; /* 선택: 화면 꽉 채우고, 내용 많으면 자동 확장 */
 }
+
 
