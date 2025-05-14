@@ -1,3 +1,4 @@
+/*조금더 만져야됨*/
 class NewsGear {
     template() {
         return `
