@@ -10,7 +10,7 @@ class NewsGame {
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.1</span>
-                        <img src="./source/hollowknight.jpg">
+                        <img src="/pages/news_game/source/hollowknight.jpg">
                     </div>
                     <div class="news-content">
                         <h2>할로우 나이트: 실크송 스위치2로 출시 예정</h2>
@@ -23,7 +23,7 @@ class NewsGame {
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.2</span>
-                        <img src="./source/skull.jpg">
+                        <img src="/pages/news_game/source/skul.jpg">
                     </div>
                     <div class="news-content">
                         <h2>누적 판매 200만 장 '스컬', 모바일판 정식 출시</h2>
@@ -34,8 +34,8 @@ class NewsGame {
                 </div>
                 <div class="news-card">
                     <div class="news-thumb">
-                        <span class="news-number">News.2</span>
-                        <img src="./source/ff14.jpg">
+                        <span class="news-number">News.3</span>
+                        <img src="/pages/news_game/source/ff14.jpg">
                     </div>
                     <div class="news-content">
                         <h2>기억과 마주하라, 파판14 '미지와의 해후' 업데이트</h2>

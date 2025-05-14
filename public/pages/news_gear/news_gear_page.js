@@ -11,7 +11,7 @@ class NewsGear {
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.1</span>
-                        <img src="./source/graphic.jpg">
+                        <img src="/pages/news_gear/source/graphic.jpg">
                     </div>
                     <div class="news-content">
                         <h2>4월 그래픽카드 평균 구매가 114만 원, 3달 새 2배 ↑</h2>
@@ -25,7 +25,7 @@ class NewsGear {
                 <div class="news-card"> 
                     <div class="news-thumb">
                         <span class="news-number">News.2</span>
-                        <img src="./source/amd.jpg">
+                        <img src="/pages/news_gear/source/amd.jpg">
                     </div>
                     <div class="news-content">
                         <h2>AMD 라이젠 9950X3D 12일 미국 출시, 699달러</h2>
@@ -37,8 +37,8 @@ class NewsGear {
                 </div>
                 <div class="news-card">
                     <div class="news-thumb">
-                        <span class="news-number">News.2</span>
-                        <img src="./source/intel.jpg">
+                        <span class="news-number">News.3</span>
+                        <img src="/pages/news_gear/source/intel.jpg">
                     </div>
                     <div class="news-content">
                         <h2>인텔 공인 대리점, 합리적 가격 i5 '밸류팩' 출시</h2>
