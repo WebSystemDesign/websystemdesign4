@@ -19,6 +19,35 @@ export async function displayGames() {
   }
 
   console.log("게임 데이터 불러옴");
+
+  const completeBtn = document.getElementById("game-submit");
+  if (!completeBtn) return;
+
+  completeBtn.addEventListener("click", () => {
+    const selectedGames = [];
+
+    for (let i = 0; i < sessionStorage.length; i++) {
+      const key = sessionStorage.key(i);
+      const value = sessionStorage.getItem(key);
+
+      try {
+        const parsed = JSON.parse(value);
+        if (parsed.minimum && parsed.recommended) {
+          selectedGames.push(parsed);
+        }
+      } catch {
+        continue;
+      }
+    }
+
+    if (selectedGames.length === 0) {
+      alert("선택된 게임이 없습니다.");
+      return;
+    }
+
+    sessionStorage.setItem("selectedGames", JSON.stringify(selectedGames));
+    window.location.href = "/desktop_select";
+  });
 }
 
 function displayFilteredGames(keyword) {
@@ -79,4 +108,3 @@ function displayFilteredGames(keyword) {
     }
   }
 }
-

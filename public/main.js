@@ -6,9 +6,11 @@ import NewsGame from "./pages/news_game/news_game_page.js";
 import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
+import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
+import { displayGames } from "./pages/game/game_image_loader.js";
 
 const $app = document.querySelector(".App");
 
@@ -21,6 +23,7 @@ const routes = {
    "/news_gear": NewsGear,
    "/mypage": Mypage,
    "/desktop_select": DesktopSelect,
+   "/desktop_detail": DesktopDetail,
 };
 
 export const changeUrl = async (requestedUrl) => {
@@ -41,8 +44,9 @@ export const changeUrl = async (requestedUrl) => {
 
     // game 페이지 구현
     if (requestedUrl === "/game") {
-        const { displayGames } = await import("./pages/game/game_image_loader.js");
-        await displayGames();
+        requestAnimationFrame(() => {
+            displayGames();
+        });
     } 
     // login , signup 페이지 구현
     else if (requestedUrl === "/login" || requestedUrl === "/signup") {
@@ -88,8 +92,9 @@ async function initRouter() {
     }
 
     if (path === "/game") {
-        const { displayGames } = await import("./pages/game/game_image_loader.js");
-        await displayGames();
+        requestAnimationFrame(() => {
+            displayGames();
+        });
     } else if (path === "/login" || path === "/signup") {
         requestAnimationFrame(() => {
             setupAuthHandlers(path);
