@@ -1,7 +1,7 @@
 class Signup {
     template() {
         return `
-            <div class = "signup-container">
+            <div class = ".wallpaper-container">
                 <img id = "signup-logo" src = "../../sources/logo_large.png" alt="logo-image">
                 <div class = "signup-inner-container">
                     <div class="signup-circle" id="signup-circle-left"></div>
