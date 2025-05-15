@@ -7,6 +7,7 @@ import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
+import Contact from "./pages/contact/contact_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
@@ -24,6 +25,7 @@ const routes = {
    "/mypage": Mypage,
    "/desktop_select": DesktopSelect,
    "/desktop_detail": DesktopDetail,
+   "/contact": Contact,
 };
 
 export const changeUrl = async (requestedUrl) => {
