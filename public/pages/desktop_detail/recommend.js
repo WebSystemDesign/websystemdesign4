@@ -4,7 +4,7 @@ import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/f
 // 게임 선택 기반 추천 부품 가져오기
 export async function getRecommendedParts() {
   const selectedGames = JSON.parse(sessionStorage.getItem("selectedGames") || "[]");
-  const specType = sessionStorage.getItem("specType") || "rec";  // "min" 또는 "rec"
+  const specType = sessionStorage.getItem("specType") === "rec"? "recommended" : "minimum";  // "min" 또는 "rec"
 
   console.log("선택된 게임:", selectedGames);
   console.log("스펙 타입:", specType);
