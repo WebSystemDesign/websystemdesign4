@@ -7,12 +7,12 @@ body {
     color: #fff;
 }
 
-.header {
+.news-header {
     text-align: center;
     padding: 40px 0 20px 0;
 }
 
-.header h1 {
+.news-header h1 {
     font-size: 2rem;
     margin: 0 auto; 
     background-color: #000;

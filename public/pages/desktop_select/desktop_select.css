@@ -1,0 +1,42 @@
+.desktop-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.desktop-box {
+    background-color: rgba(0, 0, 0, 0.46);
+    padding: 20px 20px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.desktop-img {
+    margin-bottom: 10px;
+    width: 160px;
+}
+
+#desktop-min-divider,
+#desktop-rec-divider {
+    border: 0;
+    height: 1px;
+    margin: 10px 0;
+}
+
+.desktop-min {
+    color: white;
+}
+
+.desktop-rec {
+    color: #21E6BB;
+}
+
+.desktop-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
