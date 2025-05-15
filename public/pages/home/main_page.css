@@ -106,7 +106,7 @@
 
 .home-product h2, .home-news h3 {
     margin-bottom: 10px;
-    color: white;
+    color: rgb(17, 255, 0); /* 흰색으로 변경*/
 }
 
 .home-product img, .home-news img {
