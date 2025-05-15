@@ -1,0 +1,28 @@
+.desktop-detail-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    background-color: transparent;
+    color: black;
+}
+
+.desktop-detail-thead {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.part-table {
+    background-color: white;
+}
+
+th {
+    font-size: large;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+td {
+    font-size: larger;
+    padding: 5px;
+    border-radius: 2px;
+}

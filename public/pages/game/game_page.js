@@ -12,9 +12,7 @@ class Game {
                 </button>
             </form>
             </div>
-            <a href="/desktop_select">
-                <button class="game-submit" id="game-submit" type="button">선택 완료</button>
-            </a>
+            <button class="game-submit" id="game-submit" type="button">선택 완료</button>
             </div>
 
             <div class="game-card-list">

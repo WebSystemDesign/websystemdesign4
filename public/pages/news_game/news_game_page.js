@@ -3,7 +3,7 @@ class NewsGame {
         return `
         <div id="news-game">
         <div class="wallpaper-container">
-            <div class="header">
+            <div class="news-header">
                 <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
                 <h1>게임 최신 뉴스</h1>
             </div>

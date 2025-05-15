@@ -1,38 +1,43 @@
 export function initNewsSlider() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".news-slide");
-    const dots = document.querySelectorAll(".dot");
-    const prevBtn = document.querySelector(".slider-btn.prev");
-    const nextBtn = document.querySelector(".slider-btn.next");
+    const sliders = document.querySelectorAll(".home-news-slider");
 
-    if (!slides.length) return;
+    sliders.forEach(slider => {
+        let currentSlide = 0;
+        const slides = slider.querySelectorAll(".news-slide");
+        const dots = slider.querySelectorAll(".dot");
+        const prevBtn = slider.querySelector(".slider-btn.prev");
+        const nextBtn = slider.querySelector(".slider-btn.next");
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
-            dots[i]?.classList.toggle("active", i === index);
-        });
-    }
+        if (!slides.length) return;
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+                dots[i]?.classList.toggle("active", i === index);
+            });
+        }
 
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    nextBtn?.addEventListener("click", nextSlide);
-    prevBtn?.addEventListener("click", prevSlide);
-    dots?.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-            currentSlide = i;
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
-        });
-    });
+        }
 
-    setInterval(nextSlide, 3000);
-    showSlide(currentSlide);
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        nextBtn?.addEventListener("click", nextSlide);
+        prevBtn?.addEventListener("click", prevSlide);
+        
+        dots?.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                currentSlide = i;
+                showSlide(currentSlide);
+            });
+        });
+
+        setInterval(nextSlide, 3000);
+        showSlide(currentSlide);
+    });
 }

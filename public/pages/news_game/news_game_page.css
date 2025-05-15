@@ -7,12 +7,15 @@
     color: #fff;
 }
 
+
 #news-game .header {
+
     text-align: center;
     padding: 40px 0 20px 0;
 }
 
 #news-game .header h1 {
+
     font-size: 2rem;
     margin: 0 auto; 
     background-color: #000;

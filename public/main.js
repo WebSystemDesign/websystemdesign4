@@ -8,9 +8,12 @@ import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import Console from "./pages/console/console_page.js";
 import Accessory from "./pages/accessory/accessory_page.js";
+import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
+import Contact from "./pages/contact/contact_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
+import { displayGames } from "./pages/game/game_image_loader.js";
 
 const $app = document.querySelector(".App");
 
@@ -25,9 +28,12 @@ const routes = {
    "/desktop_select": DesktopSelect,
    "/console": Console,
    "/accessory": Accessory,
+   "/desktop_detail": DesktopDetail,
+   "/contact": Contact,
 };
 
 export const changeUrl = async (requestedUrl) => {
+
     history.pushState(null, null, requestedUrl);
     const page = routes[requestedUrl];
     if (page.template.constructor.name === "AsyncFunction") {
@@ -45,8 +51,9 @@ export const changeUrl = async (requestedUrl) => {
 
     // game 페이지 구현
     if (requestedUrl === "/game") {
-        const { displayGames } = await import("./pages/game/game_image_loader.js");
-        await displayGames();
+        requestAnimationFrame(() => {
+            displayGames();
+        });
     } 
     // login , signup 페이지 구현
     else if (requestedUrl === "/login" || requestedUrl === "/signup") {
@@ -92,9 +99,16 @@ async function initRouter() {
         $app.innerHTML = page.template();
     }
 
+    if (typeof page.mounted === "function") {
+        requestAnimationFrame(() => {
+            page.mounted();
+        });
+    }
+
     if (path === "/game") {
-        const { displayGames } = await import("./pages/game/game_image_loader.js");
-        await displayGames();
+        requestAnimationFrame(() => {
+            displayGames();
+        });
     } else if (path === "/login" || path === "/signup") {
         requestAnimationFrame(() => {
             setupAuthHandlers(path);
@@ -117,6 +131,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 /*페이지 간 이동*/
 document.addEventListener('click', e => {
     const link = e.target.closest('a');
+
+    if (e.target.closest('.desktop-link-btn')) {
+        e.preventDefault();
+        const button = e.target.closest('.desktop-link-btn');
+        const type = button.dataset.type;
+        sessionStorage.setItem("specType", type);
+        changeUrl("/desktop_detail");
+    }
+
     if (link && link.getAttribute('href').startsWith('/')) {
       e.preventDefault();
       changeUrl(link.getAttribute('href'));
