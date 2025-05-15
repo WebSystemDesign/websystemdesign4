@@ -27,6 +27,7 @@ const routes = {
 };
 
 export const changeUrl = async (requestedUrl) => {
+
     history.pushState(null, null, requestedUrl);
     const page = routes[requestedUrl];
     if (page.template.constructor.name === "AsyncFunction") {
@@ -91,6 +92,12 @@ async function initRouter() {
         $app.innerHTML = page.template();
     }
 
+    if (typeof page.mounted === "function") {
+        requestAnimationFrame(() => {
+            page.mounted();
+        });
+    }
+
     if (path === "/game") {
         requestAnimationFrame(() => {
             displayGames();
@@ -117,6 +124,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 /*페이지 간 이동*/
 document.addEventListener('click', e => {
     const link = e.target.closest('a');
+
+    if (e.target.closest('.desktop-link-btn')) {
+        e.preventDefault();
+        const button = e.target.closest('.desktop-link-btn');
+        const type = button.dataset.type;
+        sessionStorage.setItem("specType", type);
+        changeUrl("/desktop_detail");
+    }
+
     if (link && link.getAttribute('href').startsWith('/')) {
       e.preventDefault();
       changeUrl(link.getAttribute('href'));
