@@ -1,4 +1,4 @@
-body {
+#news-game body {
     margin: 0;
     padding: 0;
     background: url('../../sources/backgroundImg.png') no-repeat center center fixed;
@@ -7,12 +7,12 @@ body {
     color: #fff;
 }
 
-.header {
+#news-game .header {
     text-align: center;
     padding: 40px 0 20px 0;
 }
 
-.header h1 {
+#news-game .header h1 {
     font-size: 2rem;
     margin: 0 auto; 
     background-color: #000;
@@ -24,7 +24,7 @@ body {
 }
 
 
-.news-section {
+#news-game .news-section {
     width: 85%;
     margin: 0 auto;
     padding: 20px;
@@ -33,14 +33,14 @@ body {
     gap: 30px;
 }
 
-.news-card {
+#news-game .news-card {
     display: flex;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 16px;
     overflow: hidden;
 }
 
-.news-number {
+#news-game .news-number {
     background-color: #00f0c8;
     color: #000;
     font-weight: bold;
@@ -51,20 +51,20 @@ body {
     border-radius: 4px;
 }
 
-.news-thumb {
+#news-game .news-thumb {
     width: 300px;
     position: relative;
     flex-shrink: 0;
 }
 
-.news-thumb img {
+#news-game .news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.news-content {
+#news-game .news-content {
     padding: 20px;
     background-color: #fff;
     color: #000;
@@ -74,11 +74,11 @@ body {
     justify-content: center;
 }
 
-.news-content h2 {
+#news-game .news-content h2 {
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.news-content p {
+#news-game .news-content p {
     margin: 0;
 }
