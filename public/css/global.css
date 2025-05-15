@@ -97,6 +97,11 @@ html, body {
     font-size: 0.6rem; 
   }
 
+  .home-user {
+    display: flex;
+    visibility: hidden;
+  }
+
   .login-area a {
     color: white;         
     text-decoration: none;    

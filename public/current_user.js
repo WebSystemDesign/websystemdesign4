@@ -1,12 +1,14 @@
-import { auth, db } from './firebase.js';
+import { db } from './firebase.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
+import { waitForAuthState } from './auth_state.js';
+
 
 /**
  * 현재 로그인된 사용자의 Firestore 사용자 문서를 가져옵니다.
  * @returns {Promise<Object|null>} 유저 정보 객체 또는 null
  */
 export async function getCurrentUserInfo() {
-  const user = auth.currentUser;
+  const user = await waitForAuthState();
 
   if (!user) {
     console.warn("로그인된 사용자가 없습니다.");
