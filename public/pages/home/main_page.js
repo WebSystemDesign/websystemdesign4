@@ -31,8 +31,21 @@ class Main {
                     </div>
                 </div>
                 <div class="home-news">
-                    <h3>Product News</h3>
-                    <img src="../../sources/geforce.png" id="product-news">
+                    <h3 class="product-news">Product News</h3>
+                    <div class="home-news-slider product">
+                        <button class="slider-btn prev">&#10094;</button> 
+                        <div class="slider-wrapper product-news">
+                            <img src="../../sources/geforce.png" class="news-slide active">
+                            <img src="../../sources/amd.png" class="news-slide">
+                            <img src="../../sources/intel.png" class="news-slide">
+                        </div>
+                        <button class="slider-btn next">&#10095;</button> 
+                        <div class="slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
