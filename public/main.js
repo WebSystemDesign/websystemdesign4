@@ -9,6 +9,7 @@ import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import Console from "./pages/console/console_page.js";
 import Accessory from "./pages/accessory/accessory_page.js";
 import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
+import Donate from "./pages/donate/donate_page.js";
 import Contact from "./pages/contact/contact_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
@@ -29,6 +30,7 @@ const routes = {
    "/console": Console,
    "/accessory": Accessory,
    "/desktop_detail": DesktopDetail,
+   "/donate": Donate,
    "/contact": Contact,
 };
 
