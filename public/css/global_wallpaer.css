@@ -11,7 +11,7 @@
     color: #fff;
     box-sizing: border-box;
     height: auto; /* 자동 높이 */
-    min-height: 100vh; /* 선택: 화면 꽉 채우고, 내용 많으면 자동 확장 */
+    min-height: 80vh; /* 선택: 화면 꽉 채우고, 내용 많으면 자동 확장 */
 }
 
 
