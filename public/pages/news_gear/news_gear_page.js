@@ -2,6 +2,7 @@
 class NewsGear {
     template() {
         return `
+        <div>
         <div class="wallpaper-container">
             <div class="header">
                 <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
@@ -48,6 +49,7 @@ class NewsGear {
                     </div>
                 </div>
             </section>
+        </div>
         </div>
         `;
     }
