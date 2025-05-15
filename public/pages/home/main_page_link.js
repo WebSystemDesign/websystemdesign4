@@ -17,10 +17,12 @@ export function initClickEvents() {
         });
     }
 
-    const productNews = document.getElementById("product-news");
-    if (productNews) {
-        productNews.addEventListener('click', () => {
-            changeUrl('/news_gear');
+    const productNews =  document.querySelectorAll(".product-news");
+    if (productNews.length > 0) {
+        productNews.forEach((news) => {
+            news.addEventListener('click', () => {
+                changeUrl('/news_gear');
+            });
         });
     }
 }

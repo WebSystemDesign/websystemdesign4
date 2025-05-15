@@ -1,6 +1,7 @@
 class NewsGame {
     template() {
         return `
+        <div id="news-game">
         <div class="wallpaper-container">
             <div class="news-header">
                 <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
@@ -45,6 +46,7 @@ class NewsGame {
                     </div>
                 </div>
             </section>
+        </div>
         </div>
         `;
     }

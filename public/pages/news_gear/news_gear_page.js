@@ -1,7 +1,7 @@
-/*조금더 만져야됨*/
 class NewsGear {
     template() {
         return `
+        <div id="news-gear">
         <div class="wallpaper-container">
             <div class="header">
                 <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
@@ -48,6 +48,7 @@ class NewsGear {
                     </div>
                 </div>
             </section>
+        </div>
         </div>
         `;
     }
