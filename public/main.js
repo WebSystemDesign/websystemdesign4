@@ -68,6 +68,12 @@ window.addEventListener("popstate", async () => {
         $app.innerHTML = page.template();
     }
 
+    if (typeof page.mounted === "function") {
+        requestAnimationFrame(() => {
+            page.mounted();
+        });
+    }
+
     await handleHeaderLoginUI();
 });
 
