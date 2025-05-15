@@ -6,6 +6,8 @@ import NewsGame from "./pages/news_game/news_game_page.js";
 import NewsGear from "./pages/news_gear/news_gear_page.js";
 import Mypage from "./pages/mypage/mypage_page.js";
 import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
+import Console from "./pages/console/console_page.js";
+import Accessory from "./pages/accessory/accessory_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
@@ -21,6 +23,8 @@ const routes = {
    "/news_gear": NewsGear,
    "/mypage": Mypage,
    "/desktop_select": DesktopSelect,
+   "/console": Console,
+   "/accessory": Accessory,
 };
 
 export const changeUrl = async (requestedUrl) => {
@@ -55,6 +59,7 @@ export const changeUrl = async (requestedUrl) => {
             setupLogoutButton();
         });
     }
+
     await handleHeaderLoginUI();
 };
 
