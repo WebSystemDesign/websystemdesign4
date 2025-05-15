@@ -1,6 +1,6 @@
 import { changeUrl } from "../../main.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initClickEvents() {
     const gameBtn = document.getElementById("gameBtn");
     if (gameBtn) {
         gameBtn.addEventListener('click', () => {
@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const gameNews = document.getElementById("game-news");
-    if (gameNews) {
-        gameNews.addEventListener('click', () => {
-            changeUrl('/news_game');
+    const gameNews = document.querySelectorAll(".game-news");
+    if (gameNews.length > 0) {
+        gameNews.forEach((news) => {
+            news.addEventListener('click', () => {
+                changeUrl('/news_game');
+            });
         });
     }
 
@@ -21,4 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
             changeUrl('/news_gear');
         });
     }
-});
+}

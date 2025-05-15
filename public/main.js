@@ -31,6 +31,13 @@ export const changeUrl = async (requestedUrl) => {
     } else {
         $app.innerHTML = page.template();
     }
+    
+    //뉴스이벤트 처리
+    if (typeof page.mounted === "function") {
+        requestAnimationFrame(() => {
+            page.mounted(); // DOM 렌더 후 후처리
+        });
+    }
 
     // game 페이지 구현
     if (requestedUrl === "/game") {
