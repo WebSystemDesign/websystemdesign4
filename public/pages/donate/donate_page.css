@@ -1,0 +1,43 @@
+.wallpaper-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+.donate-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.donate-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px; /* 로고와의 간격 확보 */
+    gap: 30px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.donate-text{
+    text-align: center;   /* 내부 텍스트 중앙 정렬 */
+    margin-top: 20px;
+    color: white;
+}
+#donate-profile {
+    width: 240px;        /* 원하는 크기 설정 */
+    height: 240px;
+    border-radius: 50%;  /* 동그랗게 만듦 */
+    object-fit: cover;   /* 이미지 비율 유지 */
+}
+.donate-thanks-text {
+    text-align: left;
+}
+
+.donate-bank {
+    margin-top: 40px;
+    text-align: center;
+}
+#donate-username{
+    color: #21E6BB;
+}
