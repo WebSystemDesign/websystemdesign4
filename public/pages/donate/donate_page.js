@@ -3,7 +3,7 @@ import { getCurrentUserInfo } from "../../current_user.js";
 class Donate {
     async template() {
             const userInfo = await getCurrentUserInfo();
-            const email = userInfo ? userInfo.email : "로그인 정보 없음";
+            const email = userInfo ? userInfo.email : "방문자자";
         return `
             <div class="wallpaper-container">
                 <h1 class="donate-logo">Donate</h1>

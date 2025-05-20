@@ -3,7 +3,7 @@ import { getCurrentUserInfo } from "../../current_user.js";
 class Mypage {
     async template() {
         const userInfo = await getCurrentUserInfo();
-        const email = userInfo ? userInfo.email : "로그인 정보 없음";
+        const email = userInfo ? userInfo.email : "방문자";
         const signupDate = userInfo ? userInfo.createdAt:"로그인 정보 없음";
         let pastTime;
         if (signupDate!="로그인 정보 없음"){
