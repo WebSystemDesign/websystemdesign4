@@ -11,6 +11,7 @@ import Accessory from "./pages/accessory/accessory_page.js";
 import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
 import Donate from "./pages/donate/donate_page.js";
 import Contact from "./pages/contact/contact_page.js";
+import Offline from "./pages/offline/offline_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
@@ -32,6 +33,7 @@ const routes = {
    "/desktop_detail": DesktopDetail,
    "/donate": Donate,
    "/contact": Contact,
+   "/offline": Offline
 };
 
 export const changeUrl = async (requestedUrl) => {
