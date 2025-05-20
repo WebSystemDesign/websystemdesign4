@@ -1,3 +1,5 @@
+import { waitForNaverMapAndInit } from "./map.js";
+
 class Offline {
     template() {
         return `
@@ -8,7 +10,7 @@ class Offline {
     }
 
     mounted() {
-        import("./map.js");
+        waitForNaverMapAndInit();
     }
 }
 
