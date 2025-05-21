@@ -50,6 +50,7 @@
     padding-bottom: 30px;
 }
 
+
 .product-info th, .product-info td {
     border: 1px solid white;
     padding: 10px;
@@ -62,34 +63,33 @@ table{
 
 
 /*검색창------------*/
-.search-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
-    border-radius: 50px;
-    padding: 10px 20px;
-    background-color: white;
-    width: 100%;
-    height: 50px;
-    max-width: 500px;
-    box-shadow: none;
-  }
-
-  search-container {
+.game-search-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  margin: 30px auto;
+  border-radius: 50px;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  max-width: 500px;
 }
 
-.search-logo {
+.game-search-logo {
   margin-right: 10px;
   width: 24px;
   height: 24px;
 }
 
-.search-btn {
+.game-search-text {
+  border: none;
+  min-width: 300px;
+  font-size: 16px;
+  background: transparent;
+}
+
+.game-search-btn {
   background: none;
   border: none;
   padding: 8px 12px;
@@ -97,22 +97,7 @@ table{
   border-radius: 4px;
 }
 
-.search-text {
-  border: none;
-  min-width: 300px;
-  font-size: 16px;
-  background: transparent;
-}
-
-.search-btn img {
+.game-search-btn img {
   width: 20px;
   height: 20px;
-}
-
-/*--------*/
-.console-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
