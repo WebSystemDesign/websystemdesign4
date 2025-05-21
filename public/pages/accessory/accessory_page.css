@@ -1,0 +1,105 @@
+/*콘솔 페이지랑 다를게 없어서 그대로 썼어요
+이럴거면 하나로 쓰면 되지 않느냐 하실 수도 있지만
+동감합니다 나중에 수정하면될듯 */
+
+.console-header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.console-search input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.console-products {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+}
+
+.console-product {
+    display: flex;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 60px;
+}
+
+.product-image {
+    width: 300px;
+    margin-right: 50px;
+    margin-left: 40px;
+}
+
+.product-info{
+    flex-grow: 1;
+}
+
+.product-info table {
+    width: 80%;
+    color: white;
+    border-collapse: collapse;
+    padding-bottom: 30px;
+}
+
+
+.product-info th, .product-info td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+table{
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+
+/*검색창------------*/
+.game-search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  border-radius: 50px;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  max-width: 500px;
+}
+
+.game-search-logo {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.game-search-text {
+  border: none;
+  min-width: 300px;
+  font-size: 16px;
+  background: transparent;
+}
+
+.game-search-btn {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.game-search-btn img {
+  width: 20px;
+  height: 20px;
+}
