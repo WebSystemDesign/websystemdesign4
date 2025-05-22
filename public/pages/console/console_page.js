@@ -8,14 +8,14 @@ class Console {
                     <div class="header">
                         <form class="game-search-box">
                             <img class="game-search-logo" src="../sources/logo_icon.png">
-                            <input class="game-search-text" type="text" placeholder="게임을 검색하세요.">
+                            <input class="game-search-text" type="text" placeholder="콘솔을 검색하세요.">
                             <button class="game-search-btn" type="submit">
                                 <img src="../sources/search.png" alt="검색" />
                             </button>
                         </form>
                     </div>
 
-                    <!-- ✅ 제품 목록을 .console-page 내부로 이동 -->
+                
                     <div class="console-products">
                         <div class="console-product">
                             <img src="/pages/console/source/xbox.png" class="product-image">

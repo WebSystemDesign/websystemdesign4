@@ -9,6 +9,7 @@ import DesktopSelect from "./pages/desktop_select/desktop_select_page.js";
 import Console from "./pages/console/console_page.js";
 import Accessory from "./pages/accessory/accessory_page.js";
 import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
+import Faqs from "./pages/faqs/faqs_page.js";
 import Donate from "./pages/donate/donate_page.js";
 import Contact from "./pages/contact/contact_page.js";
 import Offline from "./pages/offline/offline_page.js";
@@ -31,6 +32,7 @@ const routes = {
    "/console": Console,
    "/accessory": Accessory,
    "/desktop_detail": DesktopDetail,
+   "/faqs" : Faqs,
    "/donate": Donate,
    "/contact": Contact,
    "/offline": Offline
