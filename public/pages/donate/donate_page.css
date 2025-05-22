@@ -4,40 +4,114 @@
     padding: 20px;
     position: relative;
 }
-.donate-logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 32px;
+
+/* 공통 로고 스타일: about-logo, donate-logo에 모두 사용 */
+.page-logo {
+    font-size: clamp(24px, 5vw, 36px); /* 화면 크기에 따라 유동적으로 */
     font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
+
+/* 밑줄 효과 */
+.page-logo::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    margin: 8px auto 0;
+    background: linear-gradient(to right, #21E6BB, #2D9CDB);
+    border-radius: 2px;
+}
+
+/* 메인 컨텐츠 레이아웃 */
 .donate-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px; /* 로고와의 간격 확보 */
-    gap: 30px; /* 이미지와 텍스트 사이 간격 */
+    margin-top: 40px;
+    gap: 30px;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
 }
 
-.donate-text{
-    text-align: center;   /* 내부 텍스트 중앙 정렬 */
+/* 텍스트 스타일 */
+.donate-text {
+    text-align: center;
     margin-top: 20px;
     color: white;
-}
-#donate-profile {
-    width: 240px;        /* 원하는 크기 설정 */
-    height: 240px;
-    border-radius: 50%;  /* 동그랗게 만듦 */
-    object-fit: cover;   /* 이미지 비율 유지 */
-}
-.donate-thanks-text {
-    text-align: left;
+    font-size: 1.25rem;
 }
 
+/* 프로필 이미지 스타일 */
+#donate-profile {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 텍스트 블록 */
+.donate-thanks-text {
+    text-align: left;
+    max-width: 400px;
+}
+
+/* 은행 정보 */
 .donate-bank {
     margin-top: 40px;
     text-align: center;
 }
-#donate-username{
+
+/* 이메일 강조 */
+#donate-username {
     color: #21E6BB;
+}
+
+/* ✅ 반응형 디자인 추가 */
+@media (max-width: 768px) {
+    .donate-logo {
+        font-size: 24px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .donate-content {
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    #donate-profile {
+        width: 140px;
+        height: 140px;
+    }
+
+    .donate-thanks-text {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .donate-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .donate-logo {
+        font-size: 20px;
+    }
+
+    .donate-text {
+        font-size: 1rem;
+    }
+
+    #donate-profile {
+        width: 100px;
+        height: 100px;
+    }
 }
