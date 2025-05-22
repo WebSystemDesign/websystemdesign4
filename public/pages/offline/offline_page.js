@@ -5,6 +5,7 @@ class Offline {
         return `
             <div class="wallpaper-container">
                 <div id="map" style="width:100%; height:500px;"></div>
+                <div id="city"></div>
             </div>
         `;
     }
