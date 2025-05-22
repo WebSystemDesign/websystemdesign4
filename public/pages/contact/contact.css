@@ -1,0 +1,125 @@
+/* 내부 컨테이너만 반응형 처리 */
+.contact-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-header-line {
+    align-self: stretch;
+    height: 1px;
+    background-color: white;
+    margin: 16px 0;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 10px;
+}
+
+#contact-title {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#contact-text {
+    width: 100%;
+    height: 300px;
+    padding: 12px;
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* 버튼 영역 */
+.contact-button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-button-group button {
+    flex: 1 1 120px;
+    max-width: 100px;
+    padding: 12px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 등록 버튼 */
+#contact-resignBtn {
+    background-color: #21E6BB;
+    color: #000;
+}
+
+/* 취소 버튼 */
+#contact-cancelBtn {
+    background-color: #D9D9D9;
+    color: #000;
+}
+
+/* 호버 효과 */
+#contact-resignBtn:hover {
+    background-color: #1cc1a0;
+}
+
+#contact-cancelBtn:hover {
+    background-color: #bfbfbf;
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+    .contact-header {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .contact-header-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #contact-title {
+        font-size: 1rem;
+        padding: 14px;         /* 입력 폼 padding 증가 */
+    }
+
+    #contact-text {
+        font-size: 1rem;
+        padding: 16px;         /* 입력 폼 padding 증가 */
+        height: 350px;         /* 내용 입력 영역 확대 */
+    }
+
+    .contact-form {
+        padding: 0 5px;
+    }
+
+    .contact-button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-button-group button {
+        width: 100%;
+        max-width: none;
+    }
+
+    #contact-title,
+    #contact-text {
+        font-size: 0.95rem;
+    }
+}
