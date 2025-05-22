@@ -72,10 +72,16 @@ async function loadStoreAndDisplayMarkers(userLatLng) {
 
             const storeLatLng = new naver.maps.LatLng(result.y, result.x);
 
-            new naver.maps.Marker({
+            const marker = new naver.maps.Marker({
                 position: storeLatLng,
                 map: map,
                 title: store.name
+            });
+
+            naver.maps.Event.addListener(marker, "click", function () {
+                const query = encodeURIComponent(store.name || store.address);
+                const url = `https://map.naver.com/v5/search/${query}`;
+                window.open(url, "_blank");
             });
             
         });
