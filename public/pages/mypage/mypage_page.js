@@ -80,8 +80,8 @@ class Mypage {
 
                 <!-- 팝업 컨테이너 -->
                 <div id="popup">
-                    <button id="close-popup">닫기</button>
                     <div id="popup-content">로딩 중...</div>
+                    <button id="close-popup">닫기</button>
                 </div>
                 <div id="overlay"></div>
             </div>
