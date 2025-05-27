@@ -37,7 +37,7 @@ const routes = {
    "/donate": Donate,
    "/contact": Contact,
    "/offline": Offline,
-   "/aboutus": Aboutus
+   "/aboutus": Aboutus,
 };
 
 export const changeUrl = async (requestedUrl) => {
