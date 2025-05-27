@@ -82,3 +82,9 @@
 #news-gear .news-content p {
     margin: 0;
 }
+
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
