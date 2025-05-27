@@ -15,6 +15,15 @@
     background-color: white;
 }
 
+#save-favorite {
+    cursor: pointer;
+    align-items: end;
+}
+
+#save-favorite img {
+    height: 30px;
+}
+
 th {
     font-size: large;
     padding: 10px;
