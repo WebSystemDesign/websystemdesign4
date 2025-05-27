@@ -8,6 +8,7 @@ class NewsGear {
                 <h1>부품 최신 뉴스</h1>
             </div>
             <section class="news-section">
+                <a href="https://www.gamemeca.com/view.php?gid=1760447">
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.1</span>
@@ -21,7 +22,9 @@ class NewsGear {
                         </p>
                     </div>
                 </div>
+                </a>
 
+                <a href="https://www.gamemeca.com/view.php?gid=1759099">
                 <div class="news-card"> 
                     <div class="news-thumb">
                         <span class="news-number">News.2</span>
@@ -35,6 +38,9 @@ class NewsGear {
                         </p>
                     </div>
                 </div>
+                </a>
+
+                <a href="https://www.gamemeca.com/view.php?gid=1758631">
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.3</span>
@@ -47,6 +53,7 @@ class NewsGear {
                         </p>
                     </div>
                 </div>
+                </a>
             </section>
         </div>
         </div>

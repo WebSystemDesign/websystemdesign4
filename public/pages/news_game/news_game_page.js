@@ -3,11 +3,12 @@ class NewsGame {
         return `
         <div id="news-game">
         <div class="wallpaper-container">
-            <div class="news-header">
+            <div class="header">
                 <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
                 <h1>게임 최신 뉴스</h1>
             </div>
             <section class="news-section">
+                <a href="https://www.gamemeca.com/view.php?gid=1759868">
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.1</span>
@@ -20,7 +21,9 @@ class NewsGame {
                         </p>
                     </div>
                 </div>
+                </a>
 
+                <a href="https://www.gamemeca.com/view.php?gid=1749623">
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.2</span>
@@ -33,6 +36,9 @@ class NewsGame {
                         </p>
                     </div>
                 </div>
+                </a>
+
+                <a href="https://www.gamemeca.com/view.php?gid=1759386">
                 <div class="news-card">
                     <div class="news-thumb">
                         <span class="news-number">News.3</span>
@@ -45,6 +51,7 @@ class NewsGame {
                         </p>
                     </div>
                 </div>
+                </a>
             </section>
         </div>
         </div>
