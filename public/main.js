@@ -15,6 +15,7 @@ import Donate from "./pages/donate/donate_page.js";
 import Contact from "./pages/contact/contact_page.js";
 import Offline from "./pages/offline/offline_page.js";
 import Aboutus from "./pages/aboutus/aboutus_page.js";
+import AdminContact from "./pages/admin/admin_page.js";
 import { setupAuthHandlers } from "./user.js";
 import { handleHeaderLoginUI } from "./logged_in.js";
 import { setupLogoutButton } from "./pages/mypage/logout.js";
@@ -40,6 +41,7 @@ const routes = {
    "/contact": Contact,
    "/offline": Offline,
    "/aboutus": Aboutus,
+   "/admin": AdminContact,
 };
 
 export const changeUrl = async (requestedUrl) => {
