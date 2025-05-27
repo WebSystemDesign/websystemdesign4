@@ -6,10 +6,12 @@ class AdminContact {
         return `
         <div class="wallpaper-container">
             <div class="admin-contact-container">
-                <h1>문의글 관리 (관리자)</h1>
+                <h1>문의글 관리</h1>
                 <div id="contact-list">로딩 중...</div>
                 <div id="popup">
-                    <button id="close-popup">닫기</button>
+                    <div class="popup-header">
+                        <button id="close-popup" class="close-btn">&times;</button>
+                    </div>
                     <div id="popup-content">로딩 중...</div>
                 </div>
                 <div id="overlay"></div>
@@ -42,23 +44,26 @@ class AdminContact {
                 const timestamp = data.timestamp?.toDate?.().toLocaleString() || "시간정보없음";
                 const docId = docSnap.id;
 
+                const answered = !!data.answer;
                 const item = document.createElement("div");
                 item.className = "contact-item";
                 item.innerHTML = `
-                    <h3>${data.title}</h3>
-                    <p>${data.text}</p>
-                    <p>작성자: ${data.email}</p>
-                    <p>작성일: ${timestamp}</p>
-                    <p>답변: ${data.answer || "없음"}</p>
-                    <button class="view-detail" data-docid="${docId}">자세히 보기 및 답변</button>
+                    <div class="contact-left">
+                        <span class="q-icon">Q</span>
+                        <span class="contact-title" title="${data.title}">${data.title}</span>
+                    </div>
+                    <div class="contact-right">
+                        <span>${answered ? "▶" : "▷"}</span>
+                    </div>
                 `;
+                item.setAttribute("data-doc-id", docId);
                 listContainer.appendChild(item);
             });
         }
 
-        document.querySelectorAll(".view-detail").forEach(button => {
-            button.addEventListener("click", async (e) => {
-                const docId = e.target.dataset.docid;
+        document.querySelectorAll(".contact-item").forEach(item => {
+            item.addEventListener("click", async () => {
+                const docId = item.getAttribute("data-doc-id");
                 popup.style.display = "block";
                 overlay.style.display = "block";
                 content.innerHTML = "로딩 중...";
@@ -68,16 +73,17 @@ class AdminContact {
 
                 if (docSnap.exists()) {
                     const data = docSnap.data();
-                    let popupHTML = `
+                    content.innerHTML = `
                         <h3>${data.title}</h3>
                         <p>${data.text}</p>
                         <p>작성자: ${data.email}</p>
                         <p>작성일: ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}</p>
                         <p>현재 답변: ${data.answer || "없음"}</p>
                         <textarea id="admin-answer" placeholder="답변을 입력하세요">${data.answer || ""}</textarea>
-                        <button id="submit-answer">답변 등록</button>
+                        <div class="popup-actions">
+                            <button id="submit-answer">답변 등록</button>
+                        </div>
                     `;
-                    content.innerHTML = popupHTML;
 
                     document.getElementById("submit-answer").addEventListener("click", async () => {
                         const answer = document.getElementById("admin-answer").value.trim();
