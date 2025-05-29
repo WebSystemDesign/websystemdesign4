@@ -52,14 +52,15 @@ class Mypage {
         }
 
         return `
-            <div class="mypage-container">
-                <h1 id="mypage-text">마이페이지</h1>
+            <div class="wallpaper-container">
+                <h1 class="page-logo">MyPage</h1>
                 <div class="mypage-upper">
                     <div id="mypage-profile">
                         <img id="mypage-profile" src="../../sources/test-profile-image.jpg" alt="profile-img">
                     </div>
                     <div id="mypage-together-day">
-                        <p><span id="mypage-username">${email}</span>님과<span id="mypage-count">${pastTime}</span>일째 함께 하는 중</p>
+                        <p><span id="mypage-username">${email}</span>님과</p>
+                        <p><span id="mypage-count">${pastTime}</span>일째 함께 하는 중</p>
                     </div>
                 </div>
                 <div class="mypage-lists">
@@ -76,30 +77,31 @@ class Mypage {
                         </ul>
                     </details>
                 </div>
-                <button type="button" id="logout">로그아웃</button>
+                <button type="button" class="mypage-logout">로그아웃</button>
+
 
                 <!-- 팝업 컨테이너 -->
-                <div id="popup">
-                    <button id="close-popup">닫기</button>
-                    <div id="popup-content">로딩 중...</div>
+                <div id="mypage-popup">
+                    <button id="mypage-close-popup">닫기</button>
+                    <div id="mypage-popup-content">로딩 중...</div>
                 </div>
-                <div id="overlay"></div>
+                <div id="mypage-overlay"></div>
             </div>
         `;
     }
 
     async mounted() {
         // 팝업 열기/닫기
-        const popup = document.getElementById("popup");
-        const overlay = document.getElementById("overlay");
-        const content = document.getElementById("popup-content");
+        const popup = document.getElementById("mypage-popup");
+        const overlay = document.getElementById("mypage-overlay");
+        const content = document.getElementById("mypage-popup-content");
 
         const closePopup = () => {
             popup.style.display = "none";
             overlay.style.display = "none";
         };
 
-        document.getElementById("close-popup").addEventListener("click", closePopup);
+        document.getElementById("mypage-close-popup").addEventListener("click", closePopup);
 
         // 견적 클릭 시 팝업
         document.querySelectorAll(".estimate-btn").forEach(button => {

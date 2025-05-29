@@ -6,7 +6,7 @@
     flex-wrap: wrap; /* 좁은 화면에서 줄바꿈 */
 }
 
-/* 공통 로고 스타일: about-logo, donate-logo에 모두 사용 */
+/* 공통 로고 스타일: about-logo, donate-logo,mypage-logo에 모두 사용 */
 .page-logo {
     font-size: clamp(24px, 5vw, 36px); /* 화면 크기에 따라 유동적으로 */
     font-weight: bold;

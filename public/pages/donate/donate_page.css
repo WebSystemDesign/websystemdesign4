@@ -5,7 +5,7 @@
     position: relative;
 }
 
-/* 공통 로고 스타일: about-logo, donate-logo에 모두 사용 */
+/* 공통 로고 스타일: about-logo, donate-logo,mypage-logo에 모두 사용 */
 .page-logo {
     font-size: clamp(24px, 5vw, 36px); /* 화면 크기에 따라 유동적으로 */
     font-weight: bold;
@@ -44,7 +44,7 @@
     text-align: center;
     margin-top: 20px;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 }
 
 /* 프로필 이미지 스타일 */
@@ -55,10 +55,14 @@
     object-fit: cover;
 }
 
+#donate-sook{
+    font-weight: bold;
+}
 /* 텍스트 블록 */
 .donate-thanks-text {
     text-align: left;
     max-width: 400px;
+    font-size: 2rem;
 }
 
 /* 은행 정보 */
@@ -70,9 +74,10 @@
 /* 이메일 강조 */
 #donate-username {
     color: #21E6BB;
+    font-weight: bold;
 }
 
-/* ✅ 반응형 디자인 추가 */
+/*  반응형 디자인 추가 */
 @media (max-width: 768px) {
     .donate-logo {
         font-size: 24px;
