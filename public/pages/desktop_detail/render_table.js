@@ -18,6 +18,8 @@ export async function renderPartsTable(containerSelector = ".part-table") {
   const ssd = await getParts("ssd");
   let totalCost = 0;
 
+  const partRows = [];
+
   function createRow(type, part) {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -26,13 +28,23 @@ export async function renderPartsTable(containerSelector = ".part-table") {
       <td>${part.name}</td>
       <td>${part.price.toLocaleString()} 원</td>
       <td>${part.quantity}</td>
+      <td><button class="detail-delete-btn">X</button></td>
     `;
+    const cost = part.price * part.quantity
+    totalCost += cost
     partTableBody.appendChild(row);
-    totalCost += part.price * part.quantity;
+    partRows.push({row, cost});
+
+    row.querySelector(".detail-delete-btn").addEventListener("click", () => {
+      partTableBody.removeChild(row);
+      totalCost -= cost;
+      updateFinalRow();
+    });
   }
 
   function createFinalRow() {
     const row = document.createElement("tr");
+    row.id = "detail-total-cost-row";
     row.innerHTML = `
     <td>합계</td>
     <td></td>
@@ -41,6 +53,13 @@ export async function renderPartsTable(containerSelector = ".part-table") {
     <td></td>
     `;
     partTableBody.appendChild(row);
+  }
+
+  function updateFinalRow() {
+    const finalRow = document.getElementById("detail-total-cost-row");
+    if (finalRow) {
+      finalRow.querySelector("td:nth-child(4)").textContent = `${totalCost.toLocaleString()} 원`;
+    }
   }
 
   if (parts.cpu) createRow("cpu", parts.cpu);
