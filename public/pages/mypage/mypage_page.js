@@ -84,6 +84,7 @@ class Mypage {
                 <div id="mypage-popup">
                     <button id="mypage-close-popup">닫기</button>
                     <div id="mypage-popup-content">로딩 중...</div>
+
                 </div>
                 <div id="mypage-overlay"></div>
             </div>

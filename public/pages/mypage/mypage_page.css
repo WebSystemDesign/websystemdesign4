@@ -150,9 +150,9 @@ details ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: black;
+    background: #0A1A2F;
     padding: 20px;
-    border: 2px solid black;
+    border: 2px solid #0A1A2F;
     z-index: 1000;
     max-width: 80%;
     max-height: 80%;

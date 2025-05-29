@@ -1,5 +1,6 @@
 import { renderPartsTable } from "./render_table.js";
 import { saveFavoriteParts, getCurrentTableData } from "./save_favorite.js";
+import { setupDownloadButton } from "./save_download.js";
 import { auth } from "../../firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
@@ -7,9 +8,16 @@ class DesktopDetail {
     template() {
         return `
           <div class="desktop-detail-page wallpaper-container">
-            <h1>추천 부품 견적</h1>
-            <div id="save-favorite">
-              <img src="../../sources/heart.png">
+            <div class="detail-header-row">  
+              <div class="detail-title">추천 부품 견적</div>
+              <div class="detail-icon">
+                <div id="save-favorite">
+                  <img src="../../sources/heart.png">
+                </div>
+                <div id="save-download">
+                  <img src="../../sources/download.png">
+                </div>
+              </div>
             </div>
             <table class="desktop-detail-table">
               <thead class="desktop-detail-thead">
@@ -18,7 +26,8 @@ class DesktopDetail {
                   <th>이미지</th>
                   <th>제품명</th>
                   <th>가격</th>
-                  <th>재고</th>
+                  <th>수량</th>
+                  <th>삭제</th>
                 </tr>
               </thead>
               <tbody class="part-table"></tbody>
@@ -32,6 +41,7 @@ class DesktopDetail {
         requestAnimationFrame(() => {
           renderPartsTable();
           setupFavoriteButton();
+          setupDownloadButton();
         });
       }
 }
