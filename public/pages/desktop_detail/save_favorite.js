@@ -43,7 +43,7 @@ export function getCurrentTableData() {
 
     rows.forEach(row => {
         const cells = row.querySelectorAll("td");
-        if (cells.length === 5) {
+        if (cells.length >= 5) {
             data.push({
                 type: cells[0].textContent,
                 image: cells[1].querySelector("img")?.src || "",
