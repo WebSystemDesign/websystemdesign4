@@ -1,4 +1,4 @@
-import { getRecommendedParts } from "./recommend.js";
+import { getParts, getRecommendedParts } from "./recommend.js";
 
 export async function renderPartsTable(containerSelector = ".part-table") {
   const partTableBody = document.querySelector(containerSelector);
@@ -13,6 +13,11 @@ export async function renderPartsTable(containerSelector = ".part-table") {
     return;
   }
 
+  const mainboard = await getParts("mainboard");
+  const osKey = await getParts("os");
+  const ssd = await getParts("ssd");
+  let totalCost = 0;
+
   function createRow(type, part) {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -23,9 +28,26 @@ export async function renderPartsTable(containerSelector = ".part-table") {
       <td>${part.quantity}</td>
     `;
     partTableBody.appendChild(row);
+    totalCost += part.price * part.quantity;
+  }
+
+  function createFinalRow() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+    <td>합계</td>
+    <td></td>
+    <td></td>
+    <td>${totalCost.toLocaleString()} 원</td>
+    <td></td>
+    `;
+    partTableBody.appendChild(row);
   }
 
   if (parts.cpu) createRow("cpu", parts.cpu);
   if (parts.gpu) createRow("gpu", parts.gpu);
   if (parts.ram) createRow("ram", parts.ram);
+  if (mainboard) createRow("mainboard", mainboard);
+  if (osKey) createRow("os", osKey);
+  if (ssd) createRow("ssd", ssd);
+  createFinalRow();
 }

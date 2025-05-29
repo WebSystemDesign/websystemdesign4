@@ -57,3 +57,22 @@ async function getBestParts(partType, requiredLevel) {
   return candidates[0];
 }
 
+export async function getParts(partType) {
+  const snapshot = await getDocs(collection(db, "parts", partType, "items"));
+  let part;
+
+  snapshot.forEach(doc => {
+    const data = doc.data();
+
+    part = {
+      name: data[0],
+      image: data[1],
+      price: data[2],
+      quantity: data[3]
+    };
+
+    return;
+  });
+
+  return part;
+}
