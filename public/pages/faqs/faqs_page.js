@@ -6,11 +6,11 @@ class Faqs {
         setTimeout(() => this.afterRender(), 0);
 
         const faqItems = [
-            { id: 1, question: "자주 묻는 질문1" },
-            { id: 2, question: "자주 묻는 질문2" },
-            { id: 3, question: "자주 묻는 질문3" },
-            { id: 4, question: "자주 묻는 질문4" },
-            { id: 5, question: "자주 묻는 질문5" },
+            { id: 1, question: "CPU와 그래픽카드 중 어떤 걸 먼저 고려해야 하나요?" },
+            { id: 2, question: "오버클럭을 할 생각이 없으면 K버전 CPU를 사지 않아도 되나요?" },
+            { id: 3, question: "그래픽카드는 NVIDIA와 AMD 중 어떤 브랜드가 더 좋나요?" },
+            { id: 4, question: "파워서플라이는 용량만 크면 괜찮은가요?" },
+            { id: 5, question: "메인보드는 어떻게 고르면 되나요?" },
         ];
 
         return `
