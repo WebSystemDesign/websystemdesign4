@@ -12,7 +12,6 @@
 }
 
 .notice-text {
-    width: 300px;
     color: black;
     overflow: hidden;
 }
@@ -31,4 +30,19 @@
     height: 20px;
     object-fit: contain;
     margin-right: 10px;
+}
+
+#notice-prev-btn,
+#notice-next-btn {
+    border: 0;
+}
+
+#notice-prev-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+#notice-next-btn img {
+    width: 20px;
+    height: 20px;
 }
