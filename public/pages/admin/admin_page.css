@@ -99,6 +99,10 @@
 /* 팝업 배경과 텍스트 스타일도 수정 (가독성 향상용) */
 #popup {
     background-color: rgb(215, 215, 215);
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 2rem;
     border-radius: 12px;
     max-width: 900px;
