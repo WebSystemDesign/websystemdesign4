@@ -1,57 +1,27 @@
-.faq-container {
-    max-width: 1000px; 
-    margin: 0 auto;
-    width: 100%;       
-
+.faq-inpage-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-radius: 10px;
 }
 
-
-.faq-title {
-    text-align: center;
+.faq-inpage-title {
     font-size: 2rem;
     margin-bottom: 20px;
-    padding-bottom: 30px; /* 선과의 간격 확보 */
-    border-bottom: 1px solid white; /* 흰색 선 추가 */
-    margin-bottom: 35px; /*선 아래 간격*/
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
 }
 
-.faq-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap:20px;
+.faq-inpage-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-
-.faq-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.164);
+.faq-back-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    width: 100%;
-    height: 30%;
-    box-sizing: border-box; 
-}
-
-
-.faq-icon {
-    color: #21E6BB;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.faq-text {
-    flex-grow: 1;
-}
-
-.faq-arrow {
-    color: white;
-    font-size: 1.2rem;
 }
