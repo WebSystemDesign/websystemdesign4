@@ -4,7 +4,7 @@ import { signOut } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth
 import { changeUrl } from '../../main.js';  // SPA 라우팅을 사용할 경우
 
 export function setupLogoutButton() {
-  const logoutBtn = document.getElementById("logout");
+  const logoutBtn = document.getElementById("mypage-logout");
   if (!logoutBtn) {
     console.log("logout버튼 없음");
     return;
