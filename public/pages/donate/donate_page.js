@@ -16,7 +16,7 @@ class Donate {
                     </div>
                 </div>
                 <div class="donate-bank">
-                    <h2 class="donate-text">숙명은행</h2>
+                    <h2 class="donate-text" id="donate-sook">숙명은행</h2>
                     <h2 class="donate-text">123-456789-01234</h2>
                 </div>
             </div>

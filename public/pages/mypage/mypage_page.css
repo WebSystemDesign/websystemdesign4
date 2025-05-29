@@ -1,32 +1,150 @@
-.mypage-container{
-    width: 70%;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0,0,0,0.46);
-    color: #fff;
+
+/* 공통 로고 스타일: about-logo, donate-logo,mypage-logo에 모두 사용 */
+.page-logo {
+    font-size: clamp(24px, 5vw, 36px); /* 화면 크기에 따라 유동적으로 */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
-#mypage-text{
-    align-self: left;
+
+/* 밑줄 효과 */
+.page-logo::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    margin: 8px auto 0;
+    background: linear-gradient(to right, #21E6BB, #2D9CDB);
+    border-radius: 2px;
 }
 #mypage-profile{
-    width: 100px;
-    height: 100px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    overflow: hidden;    
+    object-fit: cover;    
+    flex-shrink: 0;
 }
-.mypage-upper{
+
+.mypage-upper {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+#mypage-username{
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+#mypage-count{
+    font-weight: bold;
+    font-size: 1.9rem;
+    color: #21E6BB;
+}
+
+#mypage-together-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.mypage-logout {
+    background-color: #21E6BB;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* 우측 정렬 */
+    margin-top: 20px;
+}
+
+.mypage-logout:hover {
+    background-color: #1cc1a0;
+}
+
+.mypage-lists {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background-color: rgba(0, 0, 0, 0.267);
+    border: 2px solid #555;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+summary {
+    position: relative;
+    padding-right: 30px; 
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+}
+summary::-webkit-details-marker {
+    display: none; /* 기본 화살표 제거 */
+}
+details[open] summary::after {
+    transform: translateY(-50%) rotate(180deg); /* 열린 상태 화살표 회전 */
+}
+summary::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    width: 16px;
+    height: 16px;
+    background-image: url('../../sources/dropdown_btn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+details ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.estimate-btn,
+.contact-btn {
+    background-color: transparent;
+    border: 1px solid #aaa;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.estimate-btn:hover,
+.contact-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* mypage.css */
 
 /* 팝업 스타일 */
-#popup {
+#mypage-popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -43,22 +161,22 @@
     border-radius: 10px;
 }
 
-#popup table {
+#mypage-popup table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#popup table th, #popup table td {
+#mypage-popup table th, #mypage-popup table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
-#popup table th {
+#mypage-popup table th {
     background-color: #f2f2f2;
 }
 
-#close-popup {
+#mypage-close-popup {
     display: inline-block;
     margin-bottom: 10px;
     padding: 5px 10px;
@@ -69,7 +187,7 @@
     border-radius: 5px;
 }
 
-#overlay {
+#mypage-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -78,4 +196,22 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
+}
+
+@media screen and (max-width: 768px) {
+    .mypage-upper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #mypage-profile {
+        width: 180px;
+        height: 180px;
+    }
+
+    #mypage-together-day {
+        font-size: 1.2rem;
+        text-align: center;
+    }
 }
