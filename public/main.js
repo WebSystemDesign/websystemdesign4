@@ -10,7 +10,7 @@ import Console from "./pages/console/console_page.js";
 import Accessory from "./pages/accessory/accessory_page.js";
 import DesktopDetail from "./pages/desktop_detail/desktop_detail_page.js";
 import Faqs from "./pages/faqs/faqs_page.js";
-import FaqsIn from './pages/faqs/faqs_inpage.js';
+import FaqInpage from './pages/faqs/faqs_inpage.js';
 import Donate from "./pages/donate/donate_page.js";
 import Contact from "./pages/contact/contact_page.js";
 import Offline from "./pages/offline/offline_page.js";
@@ -36,7 +36,7 @@ const routes = {
    "/accessory": Accessory,
    "/desktop_detail": DesktopDetail,
    "/faqs" : Faqs,
-   "/faq-inpage": FaqsIn,
+   "/faq-inpage": FaqInpage,
    "/donate": Donate,
    "/contact": Contact,
    "/offline": Offline,
@@ -46,8 +46,20 @@ const routes = {
 
 export const changeUrl = async (requestedUrl) => {
 
+    // 주소 표시줄에 URL 반영
     history.pushState(null, null, requestedUrl);
-    const page = routes[requestedUrl];
+
+    // URL 전체에서 path 추출
+    const url = new URL(window.location.origin + requestedUrl);
+    const pathname = url.pathname; // "/faq-inpage"
+    const page = routes[pathname]; // 라우터에서 path만 기준으로 매칭
+
+    if (!page) {
+        console.error("페이지를 찾을 수 없습니다:", pathname);
+        return;
+    }
+
+    // 페이지 렌더링
     if (page.template.constructor.name === "AsyncFunction") {
         $app.innerHTML = await page.template();
     } else {

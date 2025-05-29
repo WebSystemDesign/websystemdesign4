@@ -18,9 +18,9 @@ class Main {
                     <div class="home-news-slider">
                         <button class="slider-btn prev">&#10094;</button> 
                         <div class="slider-wrapper game-news">
-                            <img src="../../sources/Ori-and-the-Blind-Forest.png" class="news-slide active">
-                            <img src="../../sources/test-game-news-image2.jpg" class="news-slide">
-                            <img src="../../sources/test-game-news-image3.jpg" class="news-slide">
+                            <img src="../news_game/source/ff14.jpg" class="news-slide active">
+                            <img src="../news_game/source/hollowknight.jpg" class="news-slide">
+                            <img src="../news_game/source/skul.jpg" class="news-slide">
                         </div>
                         <button class="slider-btn next">&#10095;</button> 
                         <div class="slider-dots">
