@@ -19,6 +19,7 @@ class DesktopDetail {
                   <th>제품명</th>
                   <th>가격</th>
                   <th>수량</th>
+                  <th>삭제</th>
                 </tr>
               </thead>
               <tbody class="part-table"></tbody>
