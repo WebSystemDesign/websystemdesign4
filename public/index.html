@@ -50,7 +50,7 @@
               <a href="/mypage">마이페이지</a>
             </div>
             <div class="menu-area">
-              <nav class="nav-menu">
+              <nav class="nav-menu desktop-menu">
                 <a href="/game">컴퓨터 견적</a>
                 <a href="/offline">오프라인 매장</a>
                 <!--최신 뉴스 드롭다운-->
@@ -91,15 +91,19 @@
               <span class="fw-bold me-2 notice-title">공지사항</span>
               <div class="notice-text overflow-hidden" style="height: 24px;">
                   <div id="notice-content" class="position-relative">
-                      <div class="notice-item">첫 번째 공지사항입니다.</div>
-                      <div class="notice-item">두 번째 공지사항입니다.</div>
-                      <div class="notice-item">세 번째 공지사항입니다.</div>
+                      <div class="notice-item">[2025-05-29] 견적 다운로드 기능이 추가되었습니다.</div>
+                      <div class="notice-item">[2025-05-22] 오프라인 페이지에서 주변 매장을 확인할 수 있습니다.</div>
+                      <div class="notice-item">[2025-05-20] 문의사항 버튼이 추가되었습니다.</div>
                   </div>
               </div>
           </div>
           <div>
-              <button id="notice-prev-btn" class="btn btn-sm btn-outline-secondary">▲</button>
-              <button id="notice-next-btn" class="btn btn-sm btn-outline-secondary">▼</button>
+              <button id="notice-prev-btn" class="btn btn-sm btn-outline-secondary">
+                <img src="./sources/arrow_notice_up.png">
+              </button>
+              <button id="notice-next-btn" class="btn btn-sm btn-outline-secondary">
+                <img src="./sources/arrow_notice_down.png">
+              </button>
           </div>
       </div>
       </header>
@@ -133,6 +137,14 @@
           </div>
         </div>
       </div>
+      <div class="mobile-footer">
+          <img src="./sources/logo.png">
+          <div class="mobile-contact">
+            <p>call&#41; 02-1234-5678</p>
+            <p>email&#41; web4@gmail.com</p>
+            <p>address&#41; 서울특별시 청파로47길 100</p>
+          </div>
+        </div>
     </footer>
     <script type="module" src="./main.js"></script>
     <script type="module" src="./pages/game/game_image_loader.js"></script>

@@ -113,7 +113,7 @@ html, body {
 
  /*footer-----------------------------------------------------------------------------*/
   .global-footer {
-    background-color: #000000;
+    background-color: #0A1A2F;
     color: white;
     text-align: center;
     width: 100%;
@@ -125,7 +125,7 @@ html, body {
     width: 100%;              /* 가득 차게 */
     max-width: none;          /* 최대 너비 제한 해제 */
     margin: 0;                /* 가운데 정렬 해제 */
-    padding: 17px 0px 17px 70px;
+    padding: 17px 0px 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,14 +143,52 @@ html, body {
     gap: 27px;
   }
 
+  .mobile-footer{
+    display: none;
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    background-color: #0A1A2F;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  .mobile-footer img {
+    width: 150px;
+    margin-bottom: 5px;
+  }
+
+  .mobile-contact {
+    margin-left: 30px;
+    padding-top: 5px;
+  }
+
+  .mobile-contact p {
+    margin: 0;
+  }
+
   /*반응형 처리-----------------------------------------------------------------------------*/
   /*기존 메뉴버튼 숨김, 햄버거 버튼 팝업*/
   @media (max-width: 1080px) {
     .menu-toggle {
       display: block;
     }
-    .nav-menu {
+    .footer-content {
+      align-items: normal;
+    }
+    .desktop-menu {
       display: none; 
+    }
+    .nav-menu {
+      gap: 15px;
+      padding-right: 15px;
+      font-size: 0.5rem
+    }
+    .media {
+      gap: 15px;
+    }
+    .mobile-footer{
+      display: block;
     }
     .login-area {
       display: none;
