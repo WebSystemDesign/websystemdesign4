@@ -71,3 +71,9 @@ tr#total-cost-row td {
     align-items: center;
     margin-bottom: 10px;
 }
+
+@media (max-width: 1080px) {
+    .detail-header-row {
+        flex-direction: column;
+    }
+}

@@ -12,7 +12,7 @@ class Game {
                         </button>
                     </form>
                     </div>
-                <button class="game-submit" id="game-submit" type="button">선택 완료</button>
+                <button class="game-submit" id="game-submit" type="button">선택 완료<span id="game-count"></span></button>
                 </div>
 
                 <div class="game-card-list">
