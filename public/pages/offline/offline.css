@@ -131,15 +131,44 @@ body, html {
 }
 
 
-/* ✅ 반응형 대응 */
 @media (max-width: 768px) {
-    .map-city-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+  .wallpaper-container {
+    background: none;
+    padding: 10px;
+  }
 
-    #map,
-    #city-section {
-        width: 90%;
-    }
+  .header h1 {
+    font-size: 1.3rem;
+    padding: 8px 20px;
+    width: fit-content;
+    display: inline-block;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 8px;
+  }
+
+  .map-city-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px;
+  }
+
+  #map {
+    width: 90% !important;
+    height: 300px !important;         /* ✅ 고정 높이로 지도 유지 */
+    min-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  #city-section {
+    width: 90% !important;
+    max-height: 400px;
+    overflow-y: auto;
+    height: auto;
+  }
 }
+
+
