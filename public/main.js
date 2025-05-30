@@ -92,6 +92,7 @@ export const changeUrl = async (requestedUrl) => {
     }
 
     await handleHeaderLoginUI();
+    setupLogoutButton();
 };
 
 window.addEventListener("popstate", async () => {
@@ -111,6 +112,7 @@ window.addEventListener("popstate", async () => {
     }
 
     await handleHeaderLoginUI();
+    setupLogoutButton();
 });
 
 async function initRouter() {
@@ -144,6 +146,7 @@ async function initRouter() {
     }
 
     await handleHeaderLoginUI();
+    setupLogoutButton();
 }
 
 

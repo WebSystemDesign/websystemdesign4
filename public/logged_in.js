@@ -8,12 +8,17 @@ export async function handleHeaderLoginUI() {
     const loginElements = document.querySelectorAll(".home-user");
     const loggedInElements = document.querySelectorAll(".home-logged-in");  // 선택적으로 로그인 후 요소 추가
     const loggedOutElements = document.querySelectorAll(".home-logged-out"); // 선택적으로 로그아웃 후 요소 추가
+    const logoutElement = document.getElementById("logout");
 
     const mobileLoginElements = document.querySelectorAll("#mobile-menu .home-user");
     const mobileLoggedInElements = document.querySelectorAll("#mobile-menu .home-logged-in");
     const mobileLoggedOutElements = document.querySelectorAll("#mobile-menu .home-logged-out");
     const mobileAdminLink = document.querySelector("#mobile-menu #admin-item");
+    const mobileLogoutElement = document.getElementById("#mobile-menu #logout");
 
+
+    logoutElement.style.display = user ? "inline" : "none";
+    logoutElement.style.visibility = "visible";
 
     // 로그인 상태에 따른 UI 제어
     loginElements.forEach(el => {
@@ -46,6 +51,9 @@ export async function handleHeaderLoginUI() {
       el.style.display = user ? "none" : "block";
       el.style.visibility = "visible";
     });
+
+    mobileLogoutElement.style.display = user ? "block" : "none";
+    mobileLogoutElement.style.visibility = "visible";
 
   // 쿠키에서 IsAdmin 확인 (로그인 상태와 관계 없이)
     const isAdmin = document.cookie.split('; ').find(row => row.startsWith('isAdmin='))?.split('=')[1];
