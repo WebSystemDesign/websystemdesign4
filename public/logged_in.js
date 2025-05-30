@@ -14,7 +14,7 @@ export async function handleHeaderLoginUI() {
     const mobileLoggedInElements = document.querySelectorAll("#mobile-menu .home-logged-in");
     const mobileLoggedOutElements = document.querySelectorAll("#mobile-menu .home-logged-out");
     const mobileAdminLink = document.querySelector("#mobile-menu #admin-item");
-    const mobileLogoutElement = document.getElementById("#mobile-menu #logout");
+    const mobileLogoutElement = document.querySelector("#mobile-menu #logout");
 
 
     logoutElement.style.display = user ? "inline" : "none";
@@ -52,8 +52,10 @@ export async function handleHeaderLoginUI() {
       el.style.visibility = "visible";
     });
 
-    mobileLogoutElement.style.display = user ? "block" : "none";
-    mobileLogoutElement.style.visibility = "visible";
+    if(mobileLogoutElement) {
+      mobileLogoutElement.style.display = user ? "block" : "none";
+      mobileLogoutElement.style.visibility = "visible";
+    }
 
   // 쿠키에서 IsAdmin 확인 (로그인 상태와 관계 없이)
     const isAdmin = document.cookie.split('; ').find(row => row.startsWith('isAdmin='))?.split('=')[1];
