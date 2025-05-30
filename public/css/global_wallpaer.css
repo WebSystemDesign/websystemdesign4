@@ -15,3 +15,11 @@
 }
 
 
+@media (max-width: 1080px) {
+  .wallpaper-container {
+    background: none;
+    width: 100%;
+  }
+}
+
+

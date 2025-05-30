@@ -4,23 +4,12 @@ body, html {
     height: 100%;
 }
 
-.wallpaper-container {
-    background-image: url('./1a08fd39-92ee-4d79-8ec3-49fa776d37f9.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    padding: 0 20px 20px 20px;
-    box-sizing: border-box;
-    color: #fff;
-}
-
-.header {
+.map-header {
     text-align: center;
-    padding: 0px 0 20px 0;
+    padding: 40px 0 20px 0;
 }
 
-.header h1 {
+.map-header h1 {
     font-size: 2rem;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.75);
@@ -33,9 +22,9 @@ body, html {
 
 .map-city-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
     width: 100%;
     max-width: 1200px;  /* ✅ 충분히 넓게 확보 */
@@ -43,25 +32,22 @@ body, html {
     flex-wrap: nowrap;  /* ✅ 밀리지 않도록 nowrap 설정 */
 }
 
-
 #map {
-    width: 500px;
-    height: 400px;
+    width: 85%;
+    min-height: 400px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 #city-section {
-    width: 350px;  /* ✅ 너비 고정 */
-    height: 400px;
-    overflow-y: auto;
+    width: 85%;  /* ✅ 너비 고정 */
+    height: auto;
     flex-shrink: 0;
     padding: 10px;
-    background-color: rgba(255,255,255,0.1);
-    border: 2px solid white;
+    border: 0px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     color: white;
+    margin-top: 50px;
 
     display: flex;
     flex-direction: column;
@@ -77,25 +63,20 @@ body, html {
     text-shadow: 1px 1px 2px black;
 }
 
-.local h6 {
-    font-size: 1.5rem;
-    margin: 20px auto;
-    padding: 12px 36px;
-    border-radius: 12px;
-
-    background-color: #ffffffc5;   /* ✅ 밝은 배경 */
-    color: #000000;              /* ✅ 어두운 글씨 */
-    font-weight: bold;
-
-    text-shadow: none;
-    display: block;
-    width: fit-content;
-    text-align: center;
+.local {
+    margin-bottom: 20px;
 }
 
-
-
-
+.local h6 {
+    font-size: 2rem;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 10px 90px;
+    display: inline-block;
+    border-radius: 0px 20px 0px 20px; 
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 #city {
     width: 100%;
@@ -106,7 +87,7 @@ body, html {
     padding: 10px 15px;
     font-size: 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    color: white;
+    border: 0px;
     cursor: pointer;
     transition: background 0.2s ease;
 }
@@ -116,36 +97,37 @@ body, html {
 }
 
 #city ul ul {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    margin: 5px 0;
+    margin: 5px;
 }
 
-#city-section::-webkit-scrollbar {
-    width: 6px;
-}
-#city-section::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
+.city-summary::after {
+    right: 20px;
 }
 
 
 @media (max-width: 768px) {
   .wallpaper-container {
     background: none;
-    padding: 10px;
+    width: 100%;
   }
 
-  .header h1 {
+  .map-header h1, 
+  .local h6 {
     font-size: 1.3rem;
     padding: 8px 20px;
     width: fit-content;
     display: inline-block;
     writing-mode: horizontal-tb;
     text-align: center;
-    margin: 10px auto;
-    border-radius: 8px;
+    margin: 10px 0 10px 0;
+  }
+
+  summary .city-summary {
+    font-size: 1rem;
   }
 
   .map-city-wrapper {
@@ -156,7 +138,7 @@ body, html {
   }
 
   #map {
-    width: 90% !important;
+    width: 100% !important;
     height: 300px !important;         /* ✅ 고정 높이로 지도 유지 */
     min-height: 300px;
     border-radius: 12px;
@@ -164,10 +146,17 @@ body, html {
   }
 
   #city-section {
-    width: 90% !important;
-    max-height: 400px;
-    overflow-y: auto;
+    width: 100% !important;
     height: auto;
+    flex-shrink: 0;
+    padding: 10px;
+    border: 0px;
+    color: white;
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

@@ -33,35 +33,24 @@ export async function loadStoreAndDisplayCity() {
     cityList.style.textAlign = "left";
 
     for (const [city, stores] of Object.entries(cityStores)) {
-        const cityItem = document.createElement("li");
+        const cityItem = document.createElement("details");
         cityItem.style.padding = "5px 0";
         cityItem.style.textAlign = "left";
         
         // 도시명과 토글 아이콘
-        const cityHeader = document.createElement("div");
-        cityHeader.style.display = "flex";
-        cityHeader.style.alignItems = "center";
-        cityHeader.style.alignContent = "right"
-        cityHeader.style.cursor = "pointer";
-        cityHeader.style.fontSize = "1.2em";
+        const cityName = document.createElement("summary");
+        cityName.class = "city-summary";
+        cityName.textContent = city;
+        cityName.style.fontSize = "1.2em";
+        cityName.style.padding = "10px";
 
-        const toggleIcon = document.createElement("span");
-        toggleIcon.textContent = "●";  // ▶️ 닫힌 상태
-        toggleIcon.style.marginRight = "8px";
-        toggleIcon.style.fontSize = "0.5em";
-
-        const cityNameSpan = document.createElement("span");
-        cityNameSpan.textContent = city;
-        cityNameSpan.style.fontSize = "1.2em";
-
-        cityHeader.appendChild(toggleIcon);
-        cityHeader.appendChild(cityNameSpan);
+        //cityHeader.appendChild(cityName);
 
         // 상점 리스트
         const storeList = document.createElement("ul");
         storeList.style.display = "none";
         storeList.style.marginLeft = "20px";
-        storeList.style.listStyle = "circle";
+        storeList.style.listStyle = "none";
 
         for (const store of stores) {
             const storeItem = document.createElement("li");
@@ -70,7 +59,7 @@ export async function loadStoreAndDisplayCity() {
         }
 
         // 토글 기능
-        cityHeader.addEventListener("click", () => {
+        cityName.addEventListener("click", () => {
         const isHidden = storeList.style.display === "none";
         storeList.style.display = isHidden ? "block" : "none";
 
@@ -81,16 +70,9 @@ export async function loadStoreAndDisplayCity() {
         }
         });
 
-
-
-        cityItem.appendChild(cityHeader);
+        cityItem.appendChild(cityName);
         cityItem.appendChild(storeList);
         cityList.appendChild(cityItem);
-
-        // 도시별 hr 구분선
-        const hr = document.createElement("hr");
-        hr.style.display = "flex";
-        cityList.appendChild(hr);
     }
 
     cityDiv.appendChild(cityList);
