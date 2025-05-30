@@ -35,9 +35,9 @@ class Main {
                     <div class="home-news-slider product">
                         <button class="slider-btn prev">&#10094;</button> 
                         <div class="slider-wrapper product-news">
-                            <img src="../../sources/geforce.png" class="news-slide active">
-                            <img src="../../sources/amd.png" class="news-slide">
-                            <img src="../../sources/intel.png" class="news-slide">
+                            <img src="/pages/news_gear/source/graphic.jpg" class="news-slide active">
+                            <img src="/pages/news_gear/source/amd.jpg" class="news-slide">
+                            <img src="/pages/news_gear/source/intel.jpg" class="news-slide">
                         </div>
                         <button class="slider-btn next">&#10095;</button> 
                         <div class="slider-dots">
