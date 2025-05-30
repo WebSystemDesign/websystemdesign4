@@ -111,6 +111,10 @@ html, body {
     color: #ccc;
   }
 
+  #logout {
+    cursor: pointer;
+  }
+
  /*footer-----------------------------------------------------------------------------*/
   .global-footer {
     background-color: #0A1A2F;
