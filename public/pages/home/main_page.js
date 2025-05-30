@@ -6,12 +6,12 @@ class Main {
         return `
         <div class="home">
             <div class="home-left">
-                <div class="home-product">
-                    <h2>Today's Product</h2>
-                    <img src="../../sources/desktop.png">
-                    <button id="gameBtn">견적 맞추기</button>
-                </div>
+                <img class="home-todays-product" src="../../sources/Todays_Product.png">
+                <button class="image-button" id="gameBtn">
+                    <img src="../../sources/estimate_btn.png" alt="견적 맞추기">
+                </button>
             </div>
+            
             <div class="home-right">
                 <div class="home-news">
                     <h3 class="game-news">Game News</h3>
