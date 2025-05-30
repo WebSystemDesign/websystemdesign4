@@ -101,10 +101,36 @@ function displayFilteredGames(keyword) {
         }));
         overlay.style.display = "flex";
       }
+
+      updateSelectedGameCount();
     });
 
     if (sessionStorage.getItem(gameName)) {
       overlay.style.display = "flex";
     }
   }
+
+  updateSelectedGameCount();
+}
+
+function updateSelectedGameCount() {
+  const countSpan = document.getElementById("game-count");
+  if (!countSpan) return;
+
+  let count = 0;
+
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const key = sessionStorage.key(i);
+    try {
+      const value = JSON.parse(sessionStorage.getItem(key));
+      if (value.minimum && value.recommended) {
+        count++;
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  console.log(count)
+  countSpan.textContent = count > 0 ? ` (${count})` : ``;
 }
