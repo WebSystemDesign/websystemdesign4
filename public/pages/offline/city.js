@@ -22,7 +22,7 @@ export async function loadStoreAndDisplayCity() {
 
     const cityDiv = document.getElementById("city");
     cityDiv.innerHTML = "";
-    cityDiv.style.width = "100%";
+    cityDiv.style.width = "80%";
     cityDiv.style.textAlign = "left";
 
     const cityList = document.createElement("ul");
@@ -40,14 +40,15 @@ export async function loadStoreAndDisplayCity() {
         // 도시명과 토글 아이콘
         const cityHeader = document.createElement("div");
         cityHeader.style.display = "flex";
+        cityHeader.style.alignItems = "center";
         cityHeader.style.alignContent = "right"
         cityHeader.style.cursor = "pointer";
         cityHeader.style.fontSize = "1.2em";
 
         const toggleIcon = document.createElement("span");
-        toggleIcon.textContent = "▼";  // ▶️ 닫힌 상태
+        toggleIcon.textContent = "●";  // ▶️ 닫힌 상태
         toggleIcon.style.marginRight = "8px";
-        toggleIcon.style.fontSize = "1.2em";
+        toggleIcon.style.fontSize = "0.5em";
 
         const cityNameSpan = document.createElement("span");
         cityNameSpan.textContent = city;
@@ -70,9 +71,17 @@ export async function loadStoreAndDisplayCity() {
 
         // 토글 기능
         cityHeader.addEventListener("click", () => {
-            const isHidden = storeList.style.display === "none";
-            storeList.style.display = isHidden ? "block" : "none";
+        const isHidden = storeList.style.display === "none";
+        storeList.style.display = isHidden ? "block" : "none";
+
+        if (isHidden) {
+            setTimeout(() => {
+                cityHeader.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);  // 살짝 지연해서 펼쳐진 후 스크롤
+        }
         });
+
+
 
         cityItem.appendChild(cityHeader);
         cityItem.appendChild(storeList);

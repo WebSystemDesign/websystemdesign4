@@ -5,13 +5,23 @@ class Offline {
     template() {
         return `
             <div class="wallpaper-container">
-                <div id="map" style="width:100%; height:500px;"></div>
-                <div class="city-title">
-                    <br>
-                    <h2>지역별 매장 안내</h2>
-                    <br>
+                <div class="header">
+                    <img src="./sources/logo.png" alt="GEARQUEST" width="150"><hr>
+                    <h1>오프라인 매장</h1>
                 </div>
-                <div id="city"></div>
+                
+                <div class="map-city-wrapper">
+                    <div id="map"></div>
+
+                    <div id="city-section">
+                        <div class="city-title">
+                            <div class="local">
+                                <h6>지역별 매장 안내</h6>
+                            </div>
+                        </div>
+                        <div id="city"></div>
+                    </div>
+                </div>
             </div>
         `;
     }
