@@ -71,7 +71,7 @@ class Accessory {
 
     loadCss() {
   return new Promise((resolve) => {
-    const href = "./pages/console/console_page.css";
+    const href = "./pages/accessory/accessory_page.css";
     const existing = document.querySelector(`link[href="${href}"]`);
 
     if (existing) {

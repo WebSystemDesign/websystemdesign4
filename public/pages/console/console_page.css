@@ -1,4 +1,4 @@
-
+/* 기본 스타일 */
 
 .console-header {
     background-color: black;
@@ -24,80 +24,160 @@
 
 .console-product {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: #000000;
     padding: 20px;
     border-radius: 10px;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    margin-bottom: 10px;
-    gap: 60px;
+    gap: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .product-image {
-    width: 300px;
-    margin-right: 50px;
-    margin-left: 40px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
 }
 
-.product-info{
-    flex-grow: 1;
+.product-info {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .product-info table {
-    width: 80%;
+    width: 100%;
     color: white;
     border-collapse: collapse;
+    table-layout: fixed;
+    word-break: break-word;
+    overflow-wrap: break-word;
     padding-bottom: 30px;
 }
-
 
 .product-info th, .product-info td {
     border: 1px solid white;
     padding: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 15px;
 }
 
-table{
+table {
     width: 90%;
     margin-bottom: 20px;
 }
 
 
-/*검색창------------*/
+/* 검색창 */
 .game-search-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-  border-radius: 50px;
-  padding: 10px 20px;
-  background-color: white;
-  width: 100%;
-  height: 50px;
-  max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    max-width: 500px;
 }
 
 .game-search-logo {
-  margin-right: 10px;
-  width: 24px;
-  height: 24px;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
 }
 
 .game-search-text {
-  border: none;
-  min-width: 300px;
-  font-size: 16px;
-  background: transparent;
+    border: none;
+    min-width: 300px;
+    font-size: 16px;
+    background: transparent;
 }
 
 .game-search-btn {
-  background: none;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .game-search-btn img {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+/* 미디어쿼리: 768px 이하 */
+@media (max-width: 768px) {
+    .console-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .console-products {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .console-product {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .product-image {
+        display: none !important;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+
+    .product-info table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .product-info th, .product-info td {
+        font-size: 14px;
+    }
+
+    .game-search-box {
+        flex-direction: row;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .game-search-text {
+        min-width: 0;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .game-search-btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .game-submit {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
 }
