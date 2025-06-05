@@ -96,15 +96,24 @@
     text-overflow: ellipsis;
 }
 
+.contact-answered{
+    word-wrap: break-word;
+}
+
+.contact-answered.unanswered {
+    color: #21E6BB;
+}
+
 /* 팝업 배경과 텍스트 스타일도 수정 (가독성 향상용) */
 #popup {
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(255, 255, 255);
     display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 2rem;
     border-radius: 12px;
+    border: 2px solid #0A1A2F;
     max-width: 900px;
     width: 95%;
     margin: 5% auto;
@@ -124,6 +133,7 @@
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #000000;
     padding-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 #popup-content p {
@@ -136,11 +146,16 @@
     background:  rgb(215, 215, 215) !important;
     font-size: 1.5rem;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
     color:  #000000 !important;
+    transition: background 0.3s;
+    font-weight: bold;
 }
 
 .close-btn:hover {
-    background-color: #c2c2c2 !important;
+    background-color: #ff4d4d !important;
+    color:#fff !important;
 }
 
 .popup-actions {
@@ -185,4 +200,83 @@
     border-radius: 8px;
     font-size: 1rem;
     background: #fafafa;
+    min-height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    /* 문의글 목록 */
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 12px 16px;
+    }
+
+    .contact-left {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .contact-title {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .contact-right {
+        font-size: 1rem;
+        align-self: flex-end;
+    }
+
+    .admin-contact-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+
+    #popup {
+        width: 95%;
+        padding: 1.2rem;
+    }
+
+    #popup-content h3 {
+        font-size: 1.2rem;
+    }
+
+    #popup-content p {
+        font-size: 0.95rem;
+    }
+
+    .popup-actions {
+        justify-content: center;
+    }
+
+    .popup-actions button {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    #admin-answer {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-title {
+        font-size: 0.9rem;
+    }
+
+    .contact-right {
+        font-size: 0.95rem;
+    }
+
+    .popup-actions button {
+        padding: 0.5rem 1rem;
+    }
+
+    #admin-answer {
+        height: 100px;
+    }
 }
