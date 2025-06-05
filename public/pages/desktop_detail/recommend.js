@@ -20,16 +20,22 @@ export async function getRecommendedParts() {
     }
   }
 
-  const [cpu, gpu, ram] = await Promise.all([
-    getBestParts("cpu", maxSpec[0]),
-    getBestParts("gpu", maxSpec[1]),
-    getBestParts("ram", maxSpec[2])
+  const [cpus, gpus, rams] = await Promise.all([
+    getPartCandidates("cpu", maxSpec[0]),
+    getPartCandidates("gpu", maxSpec[1]),
+    getPartCandidates("ram", maxSpec[2])
   ]);
 
-  return { cpu, gpu, ram };
+  console.log(cpus);
+  
+  return { 
+    cpu: cpus, 
+    gpu: gpus, 
+    ram: rams 
+  };
 }
 
-async function getBestParts(partType, requiredLevel) {
+async function getPartCandidates(partType, requiredLevel) {
   const snapshot = await getDocs(collection(db, "parts", partType, "items"));
   const candidates = [];
 
@@ -48,13 +54,8 @@ async function getBestParts(partType, requiredLevel) {
     }
   });
 
-  if (candidates.length === 0) {
-    console.warn(`[${partType}] 조건 만족 부품 없음`);
-    return null;
-  }
-
-  candidates.sort((a, b) => a.price - b.price);  // 가장 저렴한 부품
-  return candidates[0];
+  candidates.sort((a, b) => a.price - b.price);
+  return candidates;
 }
 
 export async function getParts(partType) {

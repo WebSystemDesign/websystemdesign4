@@ -7,6 +7,7 @@
     border-spacing: 5px;
     background-color: transparent;
     color: black;
+    font-size: small;
 }
 
 .desktop-detail-thead {
@@ -24,6 +25,10 @@
     display: flex;
     right: 90px;
     top: 35px
+}
+
+.detail-delete-button {
+    align-items: center;
 }
 
 #save-favorite {
@@ -73,7 +78,39 @@ tr#total-cost-row td {
 }
 
 @media (max-width: 1080px) {
+    .desktop-detail-table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .desktop-detail-table,
+    .desktop-detail-thead,
+    .part-table {
+        table-layout: fixed;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .detail-header-row {
         flex-direction: column;
+    }
+
+    .part-table td:nth-child(2),
+    .part-table td:nth-child(5),
+    .desktop-detail-thead th:nth-child(2),
+    .desktop-detail-thead th:nth-child(5) {
+        display: none;
+    }
+
+    .part-select {
+        width: 100%;
+        max-width: 180px;
+    }
+    
+    .desktop-detail-thead th:nth-child(3),
+    .part-table td:nth-child(3) {
+        width: 50%;
     }
 }
