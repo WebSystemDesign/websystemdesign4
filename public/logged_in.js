@@ -14,7 +14,7 @@ export async function handleHeaderLoginUI() {
     const mobileLoggedInElements = document.querySelectorAll("#mobile-menu .home-logged-in");
     const mobileLoggedOutElements = document.querySelectorAll("#mobile-menu .home-logged-out");
     const mobileAdminLink = document.querySelector("#mobile-menu #admin-item");
-    const mobileLogoutElement = document.querySelector("#mobile-menu #logout");
+    const mobileLogoutElement = document.querySelector("#mobile-menu #mobile-logout");
 
 
     logoutElement.style.display = user ? "inline" : "none";
