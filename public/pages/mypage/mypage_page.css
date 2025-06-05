@@ -82,7 +82,7 @@
 
 details {
     background-color: rgba(0, 0, 0, 0.267);
-    border: 0px;
+    border: 1px solid #aaa;
     border-radius: 3px;
     margin-bottom: 20px;
     padding: 15px 20px;
@@ -151,7 +151,7 @@ summary::after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #0A1A2F;
+    background: #ffffff;
     padding: 20px;
     border: 2px solid #0A1A2F;
     z-index: 1000;
@@ -160,32 +160,53 @@ summary::after {
     overflow-y: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+    max-width: 90vw;     
+    min-width: 300px;
 }
 
 #mypage-popup table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; 
 }
 
 #mypage-popup table th, #mypage-popup table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #000000;
+    padding: 8px 12px;
     text-align: center;
+    word-wrap: break-word;
 }
 
 #mypage-popup table th {
-    background-color: #f2f2f2;
+    background-color: #000000;
+    color: #fff;
 }
 
+#mypage-popup table{
+    color: #000;
+}
+
+#mypage-popup-header{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 #mypage-close-popup {
     display: inline-block;
+    font-weight: bold;
     margin-bottom: 10px;
     padding: 5px 10px;
     cursor: pointer;
     border: none;
-    background-color: #ff4d4d;
-    color: white;
+    background:  rgb(215, 215, 215);
+    color:#000;
     border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#mypage-close-popup:hover{
+    background-color: #ff4d4d;
+    color: #fff;
 }
 
 #mypage-overlay {
@@ -215,4 +236,17 @@ summary::after {
         font-size: 1.2rem;
         text-align: center;
     }
+
+    #mypage-popup {
+        overflow-x: auto; 
+    }
+
+    #mypage-popup table {
+        min-width: 600px; 
+        table-layout: auto; 
+    }
+
+    details {
+    background-color: rgba(0, 0, 0, 0.356);
+}
 }
