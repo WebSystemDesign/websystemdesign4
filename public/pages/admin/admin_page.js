@@ -45,6 +45,7 @@ class AdminContact {
                 const docId = docSnap.id;
 
                 const answered = !!data.answer;
+                const statusClass = answered ? "answered":"unanswered";
                 const item = document.createElement("div");
                 item.className = "contact-item";
                 item.innerHTML = `
@@ -53,7 +54,7 @@ class AdminContact {
                         <span class="contact-title" title="${data.title}">${data.title}</span>
                     </div>
                     <div class="contact-right">
-                        <span>${answered ? "▶" : "▷"}</span>
+                        <span class = "contact-answered ${statusClass}">${answered ? "답변 완료" : "답변 필요"}</span>
                     </div>
                 `;
                 item.setAttribute("data-doc-id", docId);
