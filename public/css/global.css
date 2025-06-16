@@ -8,6 +8,8 @@ html, body {
     flex-direction: column;
     font-family: 'Noto Sans KR', sans-serif !important;
     font-weight: 400 !important;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   /* 고정 배경화면 설정 */
@@ -157,6 +159,8 @@ html, body {
     background-color: #0A1A2F;
     text-align: left;
     font-size: 0.85rem;
+    overflow-x: hidden;
+    flex-wrap: wrap;
   }
 
   .mobile-footer img {
@@ -181,6 +185,7 @@ html, body {
     }
     .footer-content {
       align-items: normal;
+      max-width: 100%;
     }
     .desktop-menu {
       display: none; 

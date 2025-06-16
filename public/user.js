@@ -25,7 +25,7 @@ export function setupAuthHandlers(page) {
                 alert("로그인 성공!");
                 window.location.href = "/";
             } catch (error) {
-                document.getElementById("errorMsg").innerText = error.message;
+                document.getElementById("errorMsg").innerText = "로그인 실패";
             }
         });
     }
@@ -58,7 +58,7 @@ export function setupAuthHandlers(page) {
                 window.location.href = "/login";
             } catch (error) {
                 console.error(error);
-                document.getElementById("errorMsg").innerText = error.message || "회원가입에 실패하였습니다.";
+                document.getElementById("errorMsg").innerText = "회원가입에 실패하였습니다.";
             }
         });
 
