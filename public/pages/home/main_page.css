@@ -183,16 +183,31 @@
 
     .home-left, .home-right {
         float: none;
-        max-width: 100%; 
-        width: 100%;       /* 세로 배치 시 전체 너비 */
+        padding: 0px 10px 0px 10px;
+    }
+
+    .home-todays-product {
+        width: 100%;
+    }
+
+    .image-button {
+        max-width: 100%;
     }
 
     .home-news-slider {
         height: 180px;
     }
 
+    .home-right {
+        max-width: 100%; 
+        width: 100%;       /* 세로 배치 시 전체 너비 */
+    }
+
     .home-left {
+        max-width: 100%;
+        width: 100%;
         align-items: center;
         border-right:none;
+        margin-left: 10px
     }
 }
