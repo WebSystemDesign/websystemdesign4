@@ -147,4 +147,36 @@
     flex-direction: column;
     gap: 5px;
   }
+
+
+}
+
+
+@media (max-width: 590px) {
+
+  .game-search-box {
+    width: 70%;
+    padding: 6px 10px;
+  }
+
+  .game-search-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  .game-search-text {
+    width: 100%;
+    font-size: 14px;
+    min-width: 0;
+  }
+
+  .game-search-btn {
+    padding: 4px;
+  }
+
+  .game-search-btn img {
+    width: 16px;
+    height: 16px;
+  }
 }
