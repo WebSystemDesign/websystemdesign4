@@ -8,7 +8,7 @@ class Donate {
             <div class="wallpaper-container">
                 <h1 class="page-logo">Donate</h1>
                 <div class="donate-content">
-                    <img id= "donate-profile" src = "../../sources/test-profile-image.jpg" alt="profile-img">
+                    <img id= "donate-profile" src = "../../sources/profile-img.png" alt="profile-img">
                     <div class="donate-thanks-text">
                         <h2 class="donate-text">더 나은 서비스를 제공해 드리겠습니다.</h2>
                         <h2 class="donate-text">감사합니다</h2>
