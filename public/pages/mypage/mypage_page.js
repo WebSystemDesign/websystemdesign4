@@ -56,7 +56,7 @@ class Mypage {
                 <h1 class="page-logo">MyPage</h1>
                 <div class="mypage-upper">
                     <div id="mypage-profile">
-                        <img id="mypage-profile" src="../../sources/test-profile-image.jpg" alt="profile-img">
+                        <img id="mypage-profile" src="../../sources/profile-img.png" alt="profile-img">
                     </div>
                     <div id="mypage-together-day">
                         <p><span id="mypage-username">${email}</span>님과</p>
