@@ -36,6 +36,8 @@ class AdminContact {
         const querySnapshot = await getDocs(collection(db, "contacts"));
         listContainer.innerHTML = "";
 
+        overlay.addEventListener("click", closePopup);
+        
         if (querySnapshot.empty) {
             listContainer.innerHTML = "<p>등록된 문의글이 없습니다.</p>";
         } else {
