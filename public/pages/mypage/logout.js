@@ -8,7 +8,7 @@ export function setupLogoutButton() {
   const logoutBtnIds = ["mypage-logout", "logout", "mobile-logout"];
   logoutBtnIds.forEach(id => {
     const logoutBtn = document.getElementById(id);
-    if (logoutBtn) {
+    if (logoutBtn && !logoutBtn.dataset.bound) {
       logoutBtn.addEventListener("click", async () => {
         try {
           await signOut(auth);
@@ -16,12 +16,13 @@ export function setupLogoutButton() {
           sessionStorage.clear();
           alert("로그아웃 되었습니다.");
           changeUrl("/");  // SPA 라우팅
-          // 또는 window.location.href = "/";
         } catch (error) {
           console.error("로그아웃 실패:", error);
           alert("로그아웃 중 오류가 발생했습니다.");
         }
       });
+
+      logoutBtn.dataset.bound = "true";
     }
   });
 }

@@ -14,7 +14,7 @@ class Login {
                     <input type="password" id="login-password" placeholder="비밀번호 입력"><br>
                     <div class="login-button-group">
                         <button id="login-loginBtn">로그인</button>
-                        <button id="login-signupBtn">회원가입</button>
+                        <button id="login-signupBtn"><a href="/signup">회원가입</a></button>
                     </div>
                     <p id="errorMsg" style="color:red"></p>
                 </div>

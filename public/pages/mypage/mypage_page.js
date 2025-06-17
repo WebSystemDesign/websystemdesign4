@@ -77,7 +77,6 @@ class Mypage {
                         </ul>
                     </details>
                 </div>
-                <button type="button" id="mypage-logout">로그아웃</button>
 
 
                 <!-- 팝업 컨테이너 -->
