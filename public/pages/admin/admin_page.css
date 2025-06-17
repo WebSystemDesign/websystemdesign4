@@ -104,20 +104,20 @@
     color: #21E6BB;
 }
 
-/* 팝업 배경과 텍스트 스타일도 수정 (가독성 향상용) */
+/* 팝업 배경과 텍스트 스타일 수정 (가독성 향상용) */
 #popup {
     background-color: rgb(255, 255, 255);
     display: none;
-    top: 50%;
+    top: 10px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     padding: 2rem;
     border-radius: 12px;
     border: 2px solid #0A1A2F;
     max-width: 900px;
     width: 95%;
     margin: 5% auto;
-    position: relative;
+    position: absolute;
     z-index: 1001;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
@@ -189,6 +189,7 @@
     background: rgba(0,0,0,0.4);
     z-index: 1000;
     display: none;
+    pointer-events: auto;
 }
 
 #admin-answer {

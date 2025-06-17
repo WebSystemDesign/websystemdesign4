@@ -32,7 +32,8 @@ class AdminContact {
         };
 
         document.getElementById("close-popup").addEventListener("click", closePopup);
-
+        overlay.addEventListener("click", closePopup);
+        
         const querySnapshot = await getDocs(collection(db, "contacts"));
         listContainer.innerHTML = "";
 
