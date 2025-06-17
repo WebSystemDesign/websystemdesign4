@@ -15,7 +15,6 @@ class Console {
                         </button>
                     </form>
                     </div>
-                <button class="game-submit" id="game-submit" type="button">선택 완료</button>
                 </div>
 
                 
