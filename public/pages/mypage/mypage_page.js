@@ -141,7 +141,7 @@ class Mypage {
             });
         });
 
-        // 문의 클릭 시 팝업 + 관리자 답변 입력
+        // 문의 클릭 시 팝업
         document.querySelectorAll(".contact-btn").forEach(button => {
             button.addEventListener("click", async (e) => {
                 const docId = e.target.dataset.docid;
@@ -161,33 +161,9 @@ class Mypage {
                         <p>작성일: ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}</p>
                         <p>답변: ${data.answer || "아직 답변이 없습니다."}</p>
                     `;
-
-                    // 관리자라면 답변 입력창 추가
-                    if (userInfo?.role === "admin") {
-                        popupHTML += `
-                            <textarea id="admin-answer" placeholder="답변을 입력하세요"></textarea>
-                            <button id="submit-answer">답변 등록</button>
-                        `;
-                    }
-
                     content.innerHTML = popupHTML;
-
-                    if (userInfo?.role === "admin") {
-                        document.getElementById("submit-answer").addEventListener("click", async () => {
-                            const answer = document.getElementById("admin-answer").value.trim();
-                            if (!answer) {
-                                alert("답변을 입력하세요.");
-                                return;
-                            }
-
-                            await updateDoc(doc(db, "contacts", docId), { answer });
-                            alert("답변이 등록되었습니다.");
-                            closePopup();
-                        });
-                    }
-
                 } else {
-                    content.innerHTML = "문서를 찾을 수 없습니다.";
+                    content.innerHTML = `<p style="color: #000;">문서를 찾을 수 없습니다.</p>`;
                 }
             });
         });

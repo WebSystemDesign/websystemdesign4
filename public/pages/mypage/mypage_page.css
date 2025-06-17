@@ -165,6 +165,10 @@ summary::after {
     min-width: 300px;
 }
 
+#mypage-popup-content {
+    color: #000;
+}
+
 #mypage-popup table {
     width: 100%;
     border-collapse: collapse;
