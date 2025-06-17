@@ -69,12 +69,24 @@ tr#total-cost-row td {
 }
 
 .detail-header-row {
+    height: 80px;
+    width: 80%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
+    position: relative;
 }
 
+.detail-icon {
+    display: flex;
+    gap:20px;
+    align-items: center;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
 .title-icon-wrapper {
   display: flex;
   align-items: center;
